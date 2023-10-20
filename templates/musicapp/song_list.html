@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -10,14 +11,21 @@
     <ul>
         {% for song in songs %}
         <li>
-            <div style="display: flex; align-items: center;">
+            <div class="container align-items-center">
                 <img src="{{ song.song_image.url }}" alt="{{ song.song_title }} Image" width="100" height="100">
                 <div>
                     <h3>{{ song.song_title }}</h3>
                     <p>{{ song.artist_name }}</p>
+                    <audio controls>
+                        <source src="{{ song.song_file }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
             </div>
         </li>
+        <h4>Debugging Output</h4>
+        <p>Song File URL: {{ song.song_file.url }}</p>
+        <p>Song Image URL: {{ song.song_image.url }}</p>
         {% endfor %}
     </ul>
 </body>
