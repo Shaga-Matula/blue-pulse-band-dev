@@ -1,0 +1,34 @@
+ id |      app      |                   name                   |            applied            
+----+---------------+------------------------------------------+-------------------------------
+  1 | contenttypes  | 0001_initial                             | 2023-10-20 01:34:25.1365+00
+  2 | auth          | 0001_initial                             | 2023-10-20 01:34:25.592283+00
+  3 | admin         | 0001_initial                             | 2023-10-20 01:34:25.731909+00
+  4 | admin         | 0002_logentry_remove_auto_add            | 2023-10-20 01:34:25.784766+00
+  5 | admin         | 0003_logentry_add_action_flag_choices    | 2023-10-20 01:34:25.831641+00
+  6 | contenttypes  | 0002_remove_content_type_name            | 2023-10-20 01:34:25.902452+00
+  7 | auth          | 0002_alter_permission_name_max_length    | 2023-10-20 01:34:25.974261+00
+  8 | auth          | 0003_alter_user_email_max_length         | 2023-10-20 01:34:26.032105+00
+  9 | auth          | 0004_alter_user_username_opts            | 2023-10-20 01:34:26.080974+00
+ 10 | auth          | 0005_alter_user_last_login_null          | 2023-10-20 01:34:26.136825+00
+ 11 | auth          | 0006_require_contenttypes_0002           | 2023-10-20 01:34:26.182702+00
+ 12 | auth          | 0007_alter_validators_add_error_messages | 2023-10-20 01:34:26.22858+00
+ 13 | auth          | 0008_alter_user_username_max_length      | 2023-10-20 01:34:26.296398+00
+ 14 | auth          | 0009_alter_user_last_name_max_length     | 2023-10-20 01:34:26.358233+00
+ 15 | auth          | 0010_alter_group_name_max_length         | 2023-10-20 01:34:26.418072+00
+ 16 | auth          | 0011_update_proxy_permissions            | 2023-10-20 01:34:26.461955+00
+ 17 | auth          | 0012_alter_user_first_name_max_length    | 2023-10-20 01:34:26.514814+00
+ 18 | home          | 0001_initial                             | 2023-10-20 01:34:26.578644+00
+ 19 | sessions      | 0001_initial                             | 2023-10-20 01:34:26.682366+00
+ 20 | musicapp      | 0001_initial                             | 2023-10-20 08:27:23.481603+00
+ 21 | musicapp      | 0002_auto_20231020_1538                  | 2023-10-20 14:38:21.022545+00
+ 22 | account       | 0001_initial                             | 2023-10-20 20:26:17.119439+00
+ 23 | account       | 0002_email_max_length                    | 2023-10-20 20:26:17.21367+00
+ 24 | account       | 0003_auto_20231020_2026                  | 2023-10-20 20:26:17.755734+00
+ 25 | sites         | 0001_initial                             | 2023-10-20 20:26:17.864538+00
+ 26 | sites         | 0002_alter_domain_unique                 | 2023-10-20 20:26:17.994881+00
+ 27 | socialaccount | 0001_initial                             | 2023-10-20 20:26:18.56375+00
+ 28 | socialaccount | 0002_token_max_lengths                   | 2023-10-20 20:26:18.714062+00
+ 29 | socialaccount | 0003_extra_data_default_dict             | 2023-10-20 20:26:18.802682+00
+ 30 | socialaccount | 0004_auto_20231020_2026                  | 2023-10-20 20:26:19.686091+00
+(30 rows)
+

@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import MusicMod
 
-# Create your views here.
+def song_list(request):
+    songs = MusicMod.objects.all()
+    return render(request, 'musicapp/song_list.html', {'songs': songs})

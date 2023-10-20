@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Song List</title>
+</head>
+
+<body>
+    <h1>Song List</h1>
+    <ul>
+        {% for song in songs %}
+        <li>
+            <div style="display: flex; align-items: center;">
+                <img src="{{ song.song_image.url }}" alt="{{ song.song_title }} Image" width="100" height="100">
+                <div>
+                    <h3>{{ song.song_title }}</h3>
+                    <p>{{ song.artist_name }}</p>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
