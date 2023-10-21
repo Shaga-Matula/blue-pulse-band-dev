@@ -1,0 +1,32 @@
+
+/* song Page songs <ul> No Bullet */
+.song-li {
+    list-style-type: none;
+}
+.song-card {
+    color: white;
+}
+
+/* Swatch Colors background colors */
+.dark-gold {
+    background-color: #8E793E;
+}
+
+.light-gold {
+    background-color: #AD974F;
+} 
+
+.intellectual-grey {
+    background-color: #231F20;
+}
+
+.light-grey {
+    color: #EAEAEA;
+}
+
+/* Slider for Audio song page */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: #8E793E;
+  color: #a0276e;
+}
