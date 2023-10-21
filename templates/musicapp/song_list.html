@@ -23,9 +23,9 @@
         <div class="row">
             {% for song in songs %}
             <div class="col-md-4 mb-4">
-                <div class="card song-card intellectual-grey">
+                <div class="card song-card intellectual-grey pt-2">
                     <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image"
-                        width="200" height="250">
+                        width="200" height="250" >
                     <div class="card-body text-center">
                         <h4 class="card-title">{{ song.song_title }}</h4>
                         <h5 class="card-subtitle">{{ song.artist_name }}</h5>
