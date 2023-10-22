@@ -14,8 +14,15 @@
 }
 
 .song-main {
-    background-color:  #8E793E;
+    background-color: deepskyblue;
 
+}
+
+
+/* Landing Page */
+
+.all-main {
+    background-color: deepskyblue;
 }
 
 /* Swatch Colors background colors */
@@ -39,7 +46,7 @@
 /* Slider for Audio song page */
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-panel {
-    background-color: #8E793E;
+    background-color: deepskyblue;
 }
 
 /* Audio */
