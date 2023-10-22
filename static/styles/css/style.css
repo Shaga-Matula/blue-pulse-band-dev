@@ -1,5 +1,5 @@
 
-/* song Page songs <ul> No Bullet */
+/* Song page songs <ul> No Bullet */
 .song-li {
     list-style-type: none;
 }
@@ -13,7 +13,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.song-body {
+.song-main {
     background-color:  #8E793E;
 
 }
