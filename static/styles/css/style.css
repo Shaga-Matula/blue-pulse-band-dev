@@ -23,7 +23,7 @@
 
 /* Landing Page */
 .blue-pulse-hero-imag {
-    background-image: url('/static/images/blue-pulse.jpg');
+    background-image: url('/static/images/bluepulseback.bmp');
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -36,7 +36,7 @@
 }
 
 .all-body {
-    background-image: url('/static/images/blue-pulse.jpg');
+    background-image: url('/static/images/bluepulseback.bmp');
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -114,4 +114,4 @@ audio {
     font-weight: 100;
     font-size: xx-large;
     font-size: 100px;
-  }
+}
