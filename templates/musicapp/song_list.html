@@ -4,13 +4,13 @@
 
 {% load static %}
 
-<main class="song-main">
-    <h1 class="text-center song-head">Blue Pulse Anthology</h1>
+<main class="#">
+    <h1 class="text-center">Blue Pulse Anthology</h1>
     <div class="container">
         <div class="row">
             {% for song in songs %}
             <div class="col-md-4 mb-4 ">
-                <div class="card song-card intellectual-grey pt-2">
+                <div class="card song-card indigo-dye pt-2">
                     <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" width="200"
                         height="250">
                     <div class="card-body flex align-items-center justify-content-center ">

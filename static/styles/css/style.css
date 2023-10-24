@@ -1,12 +1,14 @@
-
 /* Song page songs <ul> No Bullet */
+
 .song-li {
     list-style-type: none;
 }
+
 .song-head {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #EAEAEA;
 }
+
 .song-card {
     color: white;
     min-height: 400px;
@@ -20,27 +22,59 @@
 
 
 /* Landing Page */
-
-.all-main {
-    background-color: deepskyblue;
+.blue-pulse-hero-imag {
+    background-image: url('/static/images/blue-pulse.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
 }
+
+.all-body {
+    background-image: url('/static/images/blue-pulse.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Footer */
+
+.min-height-main-footer {
+    min-height: calc(100vh - 135px);
+
+}
+
 
 /* Swatch Colors background colors */
-.dark-gold {
-    background-color: #8E793E;
+.deep-sky-blue {
+    background-color: #00b8ff;
 }
 
-.light-gold {
-    background-color: #AD974F;
-    
-} 
-
-.intellectual-grey {
-    background-color: #231F20;
+.rich-electric-blue {
+    background-color: #009bd6;
 }
 
-.light-grey {
-    color: #EAEAEA;
+.sea-blue {
+    background-color: #00719c;
+}
+
+.indigo-dye {
+    background-color: #00415a
+}
+
+.rich-black {
+    background-color: #001f2b
 }
 
 /* Slider for Audio song page */
@@ -53,3 +87,31 @@ audio::-webkit-media-controls-panel {
 audio {
     display: flex;
 }
+
+/* Dev tool for centering */
+
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+
+/*  Fonts */
+@font-face {
+    font-family: 'ECG Font';
+    src: url('/static/lifeline-font/Lifeline-7O6A.ttf') format('truetype');
+  }
+  
+.lifeline-font{
+    font-family: 'ECG Font', sans-serif;
+    font-weight: 100;
+    font-size: xx-large;
+    font-size: 100px;
+  }
