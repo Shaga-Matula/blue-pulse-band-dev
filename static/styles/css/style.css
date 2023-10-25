@@ -19,7 +19,10 @@
     background-color: deepskyblue;
 
 }
-
+.nav-bar-text {
+    color: white;
+    font-size: large;
+}
 
 /* Landing Page */
 .blue-pulse-hero-imag {
