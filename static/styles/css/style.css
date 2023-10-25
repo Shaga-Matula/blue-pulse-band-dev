@@ -19,6 +19,7 @@
     background-color: deepskyblue;
 
 }
+
 .nav-bar-text {
     color: white;
     font-size: large;
@@ -96,12 +97,15 @@ audio {
 .red {
     background-color: red;
 }
+
 .green {
     background-color: green;
 }
+
 .blue {
     background-color: blue;
 }
+
 .yellow {
     background-color: yellow;
 }
@@ -110,11 +114,24 @@ audio {
 @font-face {
     font-family: 'ECG Font';
     src: url('/static/lifeline-font/Lifeline-7O6A.ttf') format('truetype');
-  }
-  
-.lifeline-font{
+}
+
+.lifeline-font {
     font-family: 'ECG Font', sans-serif;
     font-weight: 100;
     font-size: xx-large;
     font-size: 100px;
 }
+
+/* Allauth  */
+
+.login label,
+.login .error-message,
+.login input[type="text"],
+.login input[type="email"],
+.login input[type="password"] {
+    color: white;
+    
+    
+}
+
