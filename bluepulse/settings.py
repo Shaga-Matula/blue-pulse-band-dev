@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bluepulsedev-0cfcba8748ec.herokuapp.com', '127.0.0.1', '8000-shagamatula-bluepulseba-ohds842944g.ws-eu105.gitpod.io', 'bluepulsedev-0cfcba8748ec.herokuapp.com']
+ALLOWED_HOSTS = ['bluepulsedev-0cfcba8748ec.herokuapp.com', '127.0.0.1',
+                 '8000-shagamatula-bluepulseba-ohds842944g.ws-eu105.gitpod.io', 'bluepulsedev-0cfcba8748ec.herokuapp.com']
 
 
 # Application definition
@@ -52,10 +53,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'whitenoise',
+    'crispy_forms',
     'home',
     'musicapp',
 ]
-   
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,6 +71,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'bluepulse.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -78,7 +81,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', #
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -172,9 +175,7 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
