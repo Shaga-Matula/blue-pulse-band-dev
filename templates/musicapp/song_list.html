@@ -9,11 +9,10 @@
     <div class="container">
         <div class="row">
             {% for song in songs %}
-            <div class="col-md-4 mb-4 ">
+            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
                 <div class="card song-card indigo-dye pt-2">
-                    <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" width="200"
-                        height="250">
-                    <div class="card-body flex align-items-center justify-content-center ">
+                    <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" height="250" width="250">
+                    <div class="card-body flex align-items-center justify-content-center">
                         <h4 class="card-title text-center">{{ song.song_title }}</h4>
                         <h5 class="card-subtitle text-center">{{ song.artist_name }}</h5>
                         <!-- Remove download from slider -->
@@ -22,9 +21,6 @@
                             <source src="{{ song.song_file.url }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
-                        <div class=" col-md-10 flex align-items-center justify-content-center" >
-                        <!-- <img src="{% static 'pdproduct.png' %}" alt="Description of the image"> -->
-                        </div>
                     </div>
                 </div>
             </div>
