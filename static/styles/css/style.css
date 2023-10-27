@@ -116,11 +116,13 @@ audio {
     src: url('/static/lifeline-font/Lifeline-7O6A.ttf') format('truetype');
 }
 
+/* Pulse Font */
 .lifeline-font {
     font-family: 'ECG Font', sans-serif;
     font-weight: 100;
     font-size: xx-large;
     font-size: 100px;
+    
 }
 
 /* Allauth  */
@@ -131,7 +133,11 @@ audio {
 .login input[type="email"],
 .login input[type="password"] {
     color: white;
-    
-    
+       
 }
 
+.item-discpt {
+    color: white;
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

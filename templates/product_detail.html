@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{ product.name }}</h1>
+<!-- <h1>{{ product.name }}</h1>
   <p>{{ product.description }}</p>
   <p>Price: {{ product.price }}</p>
   <p>Rating: {{ product.rating }}</p>
-  <img src="{{ product.image.url }}" alt="{{ product.name }}">
+  <img src="{{ product.image.url }}" alt="{{ product.name }}"> -->
+
+<div class="container col-md-2 red merchandise-container h-100 d-flex align-items-center justify-content-center">
+  <div class="card indigo-dye pt-2 green">
+    <img src="{{ product.image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" width="200">
+    <div class="card-body flex align-items-center justify-content-center blue">
+      <h4 class="card-title text-center">{{ product.name }}</h4>
+      <h5 class="card-subtitle text-center item-discpt">{{ product.description }}</h5>
+      {{ product }}
+      <div class=" col-md-10 d-flex align-items-center justify-content-center">
+        <p>More</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}
