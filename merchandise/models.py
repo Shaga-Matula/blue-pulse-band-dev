@@ -35,15 +35,15 @@ class MerchandiseMod(models.Model):
     image = CloudinaryField(
         'image', default='placeholder', null=True, blank=True)
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name_plural = 'Merchandise'
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 @receiver(models.signals.post_save, sender=MerchandiseMod)
 def generate_sku(sender, instance, **kwargs):
     if not instance.sku:
-        instance.sku = 'MERCH-' + str(instance.id)
+        instance.sku = 'MERCH-00000000' + str(instance.id)
         instance.save()

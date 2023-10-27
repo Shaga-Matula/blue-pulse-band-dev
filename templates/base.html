@@ -66,7 +66,7 @@
                                 href="{% url 'song_list' %}">Anthology</a>
                         </li>
                         <li class="nav-item nav-bar-text">
-                            <a class="nav-link nav-bar-text" href="#">Merchandise</a>
+                            <a class="nav-link nav-bar-text" href="{% url 'all_goods' %}">Merchandise</a>
                         </li>
                         <li class="nav-item nav-bar-text">
                             <a class="nav-link nav-bar-text" href="#">Gallery</a>
@@ -98,9 +98,9 @@
         </nav>
     </header>
     <!-- Messages alert area -->
-    <div class="container">
+    <div class="container border-5">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-4 offset-md-2">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                     {{ message | safe }}
