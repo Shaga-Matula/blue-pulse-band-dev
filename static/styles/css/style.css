@@ -166,12 +166,15 @@ audio {
 
 
 
+.navbar {
+    background-color: #001f2b;
+}
 
 .card-title,
 .card-text {
-color:antiquewhite;
+    color: antiquewhite;
 }
 
-.merch-card-text{
-    color:antiquewhite;
+.merch-card-text {
+    color: antiquewhite;
 }

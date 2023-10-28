@@ -4,30 +4,27 @@
 
 {% load static %}
 
-<main class="#">
-    <h1 class="text-center">Blue Pulse Anthology</h1>
-    <div class="container">
-        <div class="row">
-            {% for song in songs %}
-            <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
-                <div class="card song-card indigo-dye pt-2">
-                    <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" height="250" width="250">
-                    <div class="card-body flex align-items-center justify-content-center">
-                        <h4 class="card-title text-center">{{ song.song_title }}</h4>
-                        <h5 class="card-subtitle text-center">{{ song.artist_name }}</h5>
-                        <!-- Remove download from slider -->
-                        <audio controls controlsList="nodownload" id="songplay"
-                            class="m-3 col-md-10 col-11 align-items-center justify-content-center">
-                            <source src="{{ song.song_file.url }}" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
+<main class="container">
+    <h1 class="text-center lifeline-font" style="margin-top: 70px;"><i>Blue Pulse Anthology</i></h1>
+    <div class="row">
+        {% for song in songs %}
+        <div class="col-md-4 col-lg-3 col-sm-6 col-12 mb-4">
+            <div class="card song-card indigo-dye pt-2 h-100">
+                <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" width="200">
+                <div class="card-body flex align-items-center justify-content-center">
+                    <h4 class="card-title text-center">{{ song.song_title }}</h4>
+                    <h5 class="card-subtitle text-center">{{ song.artist_name }}</h5>
+                    <!-- Remove download from slider -->
+                    <audio controls controlsList="nodownload" id="songplay"
+                        class="m-3 col-md-10 col-11 align-items-center justify-content-center">
+                        <source src="{{ song.song_file.url }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </main>
-
 
 {% endblock %}
