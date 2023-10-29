@@ -1,31 +1,43 @@
 {% extends 'base.html' %}
 
-
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 {% block content %}
-  <h1 class="text-center lifeline-font" style="margin-top: 70px;">Blue Pulse Merchandise</h1>
+<main class="container-fluid red">
   <div class="container d-flex align-items-center justify-content-center">
     <div class="row">
       {% for merch in all_merch %}
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-center justify-content-center">
-          <div class="card merch-card-text">
-            <a href="{% url 'merch_detail' merch.id %}">
-              <img class="card-img-top img-fluid"
-                   src="{{ merch.image.url }}" 
-                   alt="{{ merch.name }}">
-            </a>
-            <div class="card-body indigo-dye rounded-1">
-              <h5 class="card-title">{{ merch.name }}</h5>
-              <p class="card-text">{{ merch.description }}</p>
-              <p class="card-text">Price: €{{ merch.price }}</p>
-              <p class="card-text">Category: {{ merch.category }}</p>
-              
-              <small class="text-white rating"><i class="fas fa-star mr-1 star" style="color: gold;"></i> {{ merch.rating }} / 5</small>
-            </div>
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-center justify-content-center"
+      >
+        <div class="card merch-card-text">
+          <a href="{% url 'merch_detail' merch.id %}">
+            <img
+              class="card-img-top img-fluid"
+              src="{{ merch.image.url }}"
+              alt="{{ merch.name }}"
+            />
+          </a>
+          <div class="card-body indigo-dye rounded-1">
+            <h5 class="card-title">{{ merch.name }}</h5>
+            <p class="card-text">Price: €{{ merch.price }}</p>
+            <p class="card-text">Category: {{ merch.category }}</p>
+
+            <small class="text-white rating"
+              ><i class="fas fa-star mr-1 star" style="color: gold"></i> {{
+              merch.rating }} / 5</small
+            >
           </div>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
-</div>
+</main>
 
 {% endblock %}

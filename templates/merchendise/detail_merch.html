@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<main class="detail-main-back">
-
-  <h1 class="text-center lifeline-font" style="margin-top: 70px"> Blue Pulse Merchandise</h1>
-
-  <div class="container d-flex align-items-center justify-content-center">
-
-    <div class="col-md-6  blue p-5">
-      <h5 class="card-title">{{ merchantobj.name }}</h5>
-      <div class="container discription-text mt-5">
-        {{ merchantobj.description }}
-      </div>
-      <div class="mt-5">
-        <p>Price: ${{ merchantobj.price }}</p>
-      </div>
-      <div class="mt-5">
-        {% if merchantobj.rating %}
-        <small class="text-rich-black rating"><i class="fas fa-star mr-1 star" style="color: gold"></i>
-          {{merchantobj.rating }} / 5 </small>
-        {% else %}
-        <p>No rating yet</p>
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-md-6 green">
-      <img src="{{ merchantobj.image.url }}" alt="{{ merchantobj.name }}" class="img-fluid" />
-    </div>
-  {% endblock %}
+<main class="container-fluid h-100 d-flex align-items-center justify-content-center ">
+  <div class="h-25">
 
   </div>
+  <div class="mt-5 d-flex align-items-center justify-content-center flex-md-row flex-column-reverse ">
+    <div class="col-lg-6 col-md-8 col-sm-10 col-12 p-2">
+      
+      
+      <div class="container discription-page-text col-lg-8 col-md-9 col-sm-12 col-12 border-2 ">
+        <h5 class="card-title ">{{ merchantobj.name }}</h5>
+        <br>
+        <p class="align-items-start">{{ merchantobj.description }} </p>
+        <p>Price: ${{ merchantobj.price }}</p>
+        {% if merchantobj.rating %}
+        <small class="discription-page-text rating"><i class="fas fa-star mr-1 star"
+            style="color: gold"></i>{{merchantobj.rating }} / 5 </small>
+        {% else %}
+        <p class="discription-page-text">No rating yet</p>
+        {% endif %}
+      </div>
+
+    </div>
+    <div class="col-md-6 col-sm-10 col-12 d-flex flex-column justify-content-center align-items-center ">
+      <div class="text-center mx-auto">
+        <img src="{{ merchantobj.image.url }}" alt="{{ merchantobj.name }}" class="img-fluid p-3" />
+      </div>
+    </div>
+  </div>
 </main>
+{% endblock %}

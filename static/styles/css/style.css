@@ -178,11 +178,10 @@ audio {
 /* Merchandise Discription Text Tags */
 
 
-.discription-text{
-    color: #001f2b;
+.discription-page-text{
+    color: white;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-}
+   }
 /* Star Rating */
 .stars {
     display: inline-block;
@@ -199,4 +198,10 @@ audio {
 
 .star.gold {
     background-color: gold;
+}
+
+/* Main padding top */
+
+main {
+    scroll-padding-top: 300px;
 }
