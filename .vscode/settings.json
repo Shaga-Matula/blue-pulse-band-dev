@@ -28,6 +28,7 @@
       "editor.defaultFormatter": "ms-python.python"
    },
    "[django-html]": {
-      "editor.defaultFormatter": "monosans.djlint"
-   }
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "emmet.triggerExpansionOnTab": true
 }

@@ -47,19 +47,7 @@
     overflow: hidden;
 }
 
-/* Landing Page */
-/* .blue-pulse-hero-imag {
-    background-image: url('/static/images/bluepulseback.bmp');
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-} */
+
 
 .all-body {
     background-image: url('/static/images/bluepulseback.jpg');
@@ -177,4 +165,38 @@ audio {
 
 .merch-card-text {
     color: antiquewhite;
+}
+
+/* detain main */
+
+.detail-main-background{
+    background-color: white;
+}
+
+
+
+/* Merchandise Discription Text Tags */
+
+
+.discription-text{
+    color: #001f2b;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+/* Star Rating */
+.stars {
+    display: inline-block;
+    font-size: 0;
+}
+
+.star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    /* background-color: #ccc; */
+}
+
+.star.gold {
+    background-color: gold;
 }
