@@ -1,5 +1,3 @@
-
-
 /* General page setup */
 
 .center-element {
@@ -119,7 +117,7 @@ audio {
     font-weight: 100;
     font-size: xx-large;
     color: white;
-    
+
 
 }
 
@@ -141,7 +139,6 @@ audio {
 }
 
 
-
 .navbar {
     background-color: #001f2b;
 }
@@ -157,19 +154,18 @@ audio {
 
 /* detain main */
 
-.detail-main-background{
+.detail-main-background {
     background-color: white;
 }
-
 
 
 /* Merchandise Discription Text Tags */
 
 
-.discription-page-text{
+.discription-page-text {
     color: white;
     font-family: 'Open Sans', sans-serif;
-   }
+}
 /* Star Rating */
 .stars {
     display: inline-block;
@@ -188,9 +184,25 @@ audio {
     background-color: gold;
 }
 
-/* TO BE DELETED */
+.merch-main-height{
+    min-height: 100vh;
+}
 
 .merch-item-height {
-    height:auto;
-    background-color:  #00415a;
+    height: auto;
+    background-color: #00415a;
+    
+
+}
+
+/* Media Sizes */
+
+/* Remove gap at to of screen */
+@media(max-width: 767px) {
+    .merch-main-height {
+        align-items: flex-start;
+        min-height: auto;
+        padding-top: 70px;
+        
     }
+}
