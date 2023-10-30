@@ -17,28 +17,13 @@ class AllMerchView(TemplateView):
         return context
 
 
-# class MerchDetailView(TemplateView):
-#
-#     template_name = 'merchendise/detail_merch.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         merch = get_object_or_404(MerchandiseMod, pk=self.kwargs['pk'])
-#         context['merch_id'] = merch
-#         return context
-
-#     def get(self, request, *args, **kwargs):
-#         context = self.get_context_data(**kwargs)
-#         return render(request, self.template_name, context)
-
-
 class MerchendiseDetailView(DetailView):
     model = MerchandiseMod
-    template_name = 'merchendise/detail_merch.html'
-    context_object_name = 'merchantobj'
+    template_name = 'merchendise/merch_item.html'
+    context_object_name = 'merch_item'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['merchantobj'] = self.object
+        context['merch_item'] = self.object
         return context
 

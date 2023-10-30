@@ -10,13 +10,13 @@
 
 
       <div class="container discription-page-text col-lg-8 col-md-9 col-sm-12 col-12 border-2 ">
-        <h5 class="card-title ">{{ merchantobj.name }}</h5>
+        <h5 class="card-title ">{{ merch_item.name }}</h5>
         <br>
-        <p class="align-items-start">{{ merchantobj.description }} </p>
-        <p>Price: ${{ merchantobj.price }}</p>
-        {% if merchantobj.rating %}
+        <p class="align-items-start">{{ merch_item.description }} </p>
+        <p>Price: ${{ merch_item.price }}</p>
+        {% if merch_item.rating %}
         <small class="discription-page-text rating"><i class="fas fa-star mr-1 star"
-            style="color: gold"></i>{{merchantobj.rating }} / 5 </small>
+            style="color: gold"></i>{{merch_item.rating }} / 5 </small>
         {% else %}
         <p class="discription-page-text">No rating yet</p>
         {% endif %}
@@ -25,7 +25,7 @@
     </div>
     <div class="col-md-6 col-sm-10 col-12 d-flex flex-column justify-content-center align-items-center ">
       <div class="text-center mx-auto">
-        <img src="{{ merchantobj.image.url }}" alt="{{ merchantobj.name }}" class="img-fluid p-3" />
+        <img src="{{ merch_item.image.url }}" alt="{{ merch_item.name }}" class="img-fluid p-3" />
       </div>
     </div>
   </div>
