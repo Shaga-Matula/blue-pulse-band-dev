@@ -4,9 +4,6 @@ from django.dispatch import receiver
 
 
 class CategoryMod(models.Model):
-    """
-    This model holds categories of band merchandise.
-    """
     CATEGORY_CHOICES = (
         ('caps', 'Caps'),
         ('t-shirts', 'T-Shirts'),
@@ -15,18 +12,16 @@ class CategoryMod(models.Model):
         ('bags', 'Bags'),
     )
 
-    name = models.CharField(max_length=254, verbose_name='Category Name')
+    name = models.CharField(
+        max_length=254, verbose_name='Category Name', choices=CATEGORY_CHOICES)
     friendly_name = models.CharField(
         max_length=254, null=True, blank=True, verbose_name='Friendly Name')
 
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
     class Meta:
         verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
 
 
 class MerchandiseMod(models.Model):
