@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} 
+
 {% block content %}
-<main class="container-fluid ">
+<main class="container-fluid">
+  <h1 class="text-center lifeline-font" style="margin-top: 70px;"><i>Merchendise</i></h1>
   <div class="container d-flex align-items-center justify-content-center">
     <div class="row">
       {% for merch in all_merch %}
@@ -29,8 +30,8 @@
             <p class="card-text">Category: {{ merch.category }}</p>
 
             <small class="text-white rating"
-              ><i class="fas fa-star mr-1 star" style="color: gold"></i> {{
-              merch.rating }} / 5</small
+              ><i class="fas fa-star mr-1 star" style="color: gold"></i>
+              {{merch.rating }} / 5</small
             >
           </div>
         </div>
