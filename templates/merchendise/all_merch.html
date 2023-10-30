@@ -1,44 +1,23 @@
 {% extends 'base.html' %}
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 2901fc3 (revert)
 
 {% block content %}
-    <main class="container-fluid">
-        <h1 class="text-center lifeline-font" style="margin-top: 70px;">
-            <i>Merchandise</i>
-        </h1>
-<<<<<<< HEAD
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
+<main class="container-fluid green">
+    <h1 class="text-center lifeline-font" style="margin-top: 70px;"> <i>Merchandise</i></h1>
+       
+    <div class="row justify-content-center align-items-center">
+        <div class="col-xl-9 col-md-11 col-sm-12 col-12">
+            <div class="row justify-content-center">
                 {% for merch in all_merch %}
-                    <div class="col mb-4">
-                        <a href="{% url 'merch_detail' merch.id %}">
-                            <img src="{{ merch.image.url }}" alt="{{ merch.name }}" class="img-fluid p-3"/>
-                        </a>
-                        <div class="card merch-card-text">
-                            <div class="card-body indigo-dye rounded-1">
-                                <h5 class="card-title">{{ merch.name }}</h5>
-                                <p class="card-text">Price: €{{ merch.price }}</p>
-                                <p class="card-text">Category: {{ merch.category }}</p>
-                                <small class="text-white rating">
-=======
-        <div class="container-fluid green col-9">
-            <div class="row justify-content-center col-8">
-                {% for merch in all_merch %}
-                    <div class="col-lg-4 col-md-6 col-sm-10 col-12 p-2">
+                    <div class="col-lg-3 col-md-6 col-sm-8 col-12 p-1">
                         <div class="card indigo-dye">
                             <a href="{% url 'merch_detail' merch.id %}">
-                                <img src="{{ merch.image.url }}" alt="{{ merch.name }}" class="card-img-top img-fluid p-3 "/>
+                                <img src="{{ merch.image.url }}" alt="{{ merch.name }}" class="card-img-top img-fluid p-3" />
                             </a>
-                            <div class="card-body ">
+                            <div class="card-body">
                                 <h5 class="card-title">{{ merch.name }}</h5>
                                 <p class="card-text">Price: €{{ merch.price }}</p>
                                 <p class="card-text">Category: {{ merch.category }}</p>
                                 <small class="text-muted rating">
->>>>>>> 2901fc3 (revert)
                                     <i class="fas fa-star mr-1 star" style="color: gold"></i>
                                     {{ merch.rating }}/5
                                 </small>
@@ -48,9 +27,6 @@
                 {% endfor %}
             </div>
         </div>
-    </main>
-<<<<<<< HEAD
+    </div>
+</main>
 {% endblock %}
-=======
-{% endblock %}
->>>>>>> 2901fc3 (revert)
