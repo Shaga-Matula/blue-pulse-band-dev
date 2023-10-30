@@ -1,3 +1,14 @@
+
+
+/* General page setup */
+
+.center-element {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
 /* Song page songs <ul> No Bullet */
 
 .song-li {
@@ -25,32 +36,8 @@
     font-size: large;
 }
 
-.test-class2 {
-    font-size: 16px;
-    height: 22px;
-    line-height: 22px;
-    display: inline-block;
-    padding-right: 0;
-}
-
-.test-class {
-
-    color: #333;
-    font-size: 12px;
-    line-height: 16px;
-    display: -moz-box;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    height: 32px;
-    overflow: hidden;
-}
-
-
-
 .all-body {
-    background-image: url('/static/images/bluepulseback.jpg');
+    background-image: url('/static/images/studio_back.jpg');
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -62,7 +49,7 @@
     width: 100vw;
 }
 
-/* Footer */
+/* Footer phantom main page */
 
 .min-height-main-footer {
     min-height: calc(100vh - 135px);

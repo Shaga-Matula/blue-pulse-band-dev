@@ -7,6 +7,14 @@ class CategoryMod(models.Model):
     """
     This model holds categories of band merchandise.
     """
+    CATEGORY_CHOICES = (
+        ('caps', 'Caps'),
+        ('t-shirts', 'T-Shirts'),
+        ('pens', 'Pens'),
+        ('mugs', 'Mugs'),
+        ('bags', 'Bags'),
+    )
+
     name = models.CharField(max_length=254, verbose_name='Category Name')
     friendly_name = models.CharField(
         max_length=254, null=True, blank=True, verbose_name='Friendly Name')

@@ -21,14 +21,17 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Visual Studio Dark",
+   "workbench.colorTheme": "Default Dark Modern",
    "terminal.integrated.gpuAcceleration": "canvas",
-   "editor.defaultFormatter": "HookyQR.beautify",
+   "editor.defaultFormatter": "ms-python.flake8",
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
    },
    "[django-html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
    },
-   "emmet.triggerExpansionOnTab": true
+   "emmet.triggerExpansionOnTab": true,
+   "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+   }
 }
