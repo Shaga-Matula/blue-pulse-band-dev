@@ -55,6 +55,22 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{% url 'home' %}"><strong>Blue Pulse</strong> </a>
+                <!-- Query -->
+                <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
+                    <form method="GET" action="{% url 'all_merchandise' %}">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Collapsible Nav Bar -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -100,9 +116,10 @@
         </nav>
     </header>
     <!-- Messages alert area -->
-    <div class="container border-5">
+
+    <div class="container border-5 msg-container" style="margin-top: 70px;" >
         <div class="row">
-            <div class="col-md-4 offset-md-2">
+            <div class="col-md-6 offset-md-2">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                     {{ message | safe }}
@@ -112,7 +129,7 @@
             </div>
         </div>
     </div>
-
+    
     {% block content %}
 
     {% endblock %}
