@@ -9,7 +9,7 @@ class AllMerchView(TemplateView):
     Gets All Merchandise
     """
     model = MerchandiseMod
-    template_name = 'merchendise/all_merch.html'
+    template_name = 'merchandise/all_merch.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -17,9 +17,9 @@ class AllMerchView(TemplateView):
         return context
 
 
-class MerchendiseDetailView(DetailView):
+class merchandiseDetailView(DetailView):
     model = MerchandiseMod
-    template_name = 'merchendise/merch_item.html'
+    template_name = 'merchandise/merch_item.html'
     context_object_name = 'merch_item'
 
     def get_context_data(self, **kwargs):

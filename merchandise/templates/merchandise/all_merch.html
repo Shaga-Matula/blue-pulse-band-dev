@@ -10,7 +10,7 @@
                 {% for merch in all_merch %}
                     <div class="col-lg-3 col-md-6 col-sm-8 col-12 p-1">
                         <div class="card indigo-dye">
-                            <a href="{% url 'merch_detail' merch.id %}">
+                            <a href="{% url 'merch_item' merch.id %}">
                                 <img src="{{ merch.image.url }}" alt="{{ merch.name }}" class="card-img-top img-fluid p-3" />
                             </a>
                             <div class="card-body">
