@@ -45,14 +45,16 @@
 }
 .second-navbar-li{
     
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
     color: #EAEAEA;
 }
 
 .second-navbar-li a {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
+    white-space: nowrap;
+    font-size: larger;
 }
 
 
