@@ -43,7 +43,7 @@
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: calc(100vh - 135px);
     width: 100vw;
 }
 
