@@ -52,14 +52,15 @@
 
 <body class="all-body">
     <header class="head-head fixed-top">
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg navbar-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{% url 'home' %}"><strong>Blue Pulse</strong> </a>
                 <!-- Query -->
                 <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'all_merchandise' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
+                            <input class="form-control border border-black rounded-0" type="text" name="q"
+                                placeholder="Search">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                     <span class="icon text-white">
@@ -114,10 +115,32 @@
                 </div>
             </div>
         </nav>
+        <!-- Second Navbar (White Background) -->
+        <nav class="navbar navbar-expand-lg second-navbar">
+            <div class="container align-content-center ">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item second-navbar-li">
+                        <a class="nav-link " href="#">All Merchandise</a>
+                    </li>
+                    <li class="nav-item second-navbar-li">
+                        <a class="nav-link " href="#">T-Shirts</a>
+                    </li>
+                    <li class="nav-item second-navbar-li">
+                        <a class="nav-link " href="#">Cups & Bottles</a>
+                    </li>
+                    <li class="nav-item second-navbar-li">
+                        <a class="nav-link" href="#">Pens & Keyrings</a>
+                    </li>
+                    <li class="nav-item second-navbar-li">
+                        <a class="nav-link" href="#">Band CD</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- Messages alert area -->
 
-    <div class="container border-5 msg-container" style="margin-top: 70px;" >
+    <div class="container border-5 msg-container" style="margin-top: 140px;">
         <div class="row">
             <div class="col-md-6 offset-md-2">
                 {% for message in messages %}
@@ -129,7 +152,7 @@
             </div>
         </div>
     </div>
-    
+
     {% block content %}
 
     {% endblock %}

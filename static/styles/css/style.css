@@ -28,11 +28,35 @@
     background-color: deepskyblue;
 
 }
-
+/* Navbar Top */
 .nav-bar-text {
     color: white;
     font-size: large;
 }
+
+.navbar-top {
+    background-color: #00719c;
+}
+
+/* Navbar Bottom */
+.second-navbar{
+    background-color:#001f2b;
+    
+}
+.second-navbar-li{
+    
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #EAEAEA;
+}
+
+.second-navbar-li a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+
+
 
 .all-body {
     background-image: url('/static/images/studio_back.jpg');
@@ -50,11 +74,12 @@
 /* Footer phantom main page */
 
 .min-height-main-footer {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 10px);
 }
 
 
 /* Swatch Colors background colors */
+
 .deep-sky-blue {
     background-color: #00b8ff;
 }
@@ -70,6 +95,7 @@
 .indigo-dye {
     background-color: #00415a
 }
+
 
 .rich-black {
     background-color: #001f2b
@@ -138,9 +164,7 @@ audio {
 }
 
 
-.navbar {
-    background-color: #001f2b;
-}
+
 
 .card-title,
 .card-text {
@@ -188,6 +212,19 @@ audio {
     width: auto;
     background-color: #00415a
 }
+
+
+.black-line {
+    height: 20px;
+    background-color: black;
+}
+
+/* Gold horizontal line */
+.gold-line {
+    height: 20px;
+    background-color: gold;
+}
+
 
 /* Media Sizes */
 
