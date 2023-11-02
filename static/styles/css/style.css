@@ -51,7 +51,6 @@
 
 .min-height-main-footer {
     min-height: calc(100vh - 135px);
-
 }
 
 
@@ -177,33 +176,25 @@ audio {
     width: 20px;
     height: 20px;
     margin: 0 2px;
-    /* background-color: #ccc; */
+    
 }
 
 .star.gold {
     background-color: gold;
 }
 
-.merch-main-height{
-    min-height: 100vh;
-}
-
 .merch-item-height {
     height: auto;
     width: auto;
-    background-color: #00415a;
-    
-
+    background-color: #00415a
 }
 
 /* Media Sizes */
 
 /* Remove gap at to of screen */
 @media(max-width: 767px) {
-    .merch-main-height {
+    .adjust-index-height {
         align-items: flex-start;
         min-height: auto;
-        padding-top: 70px;
-        
     }
 }
