@@ -7,12 +7,15 @@ from django.db.models import Q
 
 
 class AllMerchView(TemplateView):
+    """
+    Render: all merchandise and handles search Q
+    """
     template_name = 'merchandise/all_merch.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         search_query = self.request.GET.get('q')
-
+        # Search Query using Q query 
         if search_query:
             queries = Q(name__icontains=search_query) | Q(description__icontains=search_query)
             all_merch = MerchandiseMod.objects.filter(queries)
@@ -21,14 +24,17 @@ class AllMerchView(TemplateView):
                 messages.success(self.request, f"Search items results successfully retrieved for '{search_query}'")
             else:
                 context['all_merch'] = []
-                messages.warning(self.request, f"No items found for '{search_query}'")
+                messages.warning(self.request, f"Sorry no items retrieved for '{search_query}'")
         else:
             context['all_merch'] = MerchandiseMod.objects.all()
 
         return context
 
 
-class merchandiseDetailView(DetailView):
+class MerchandiseDetailView(DetailView):
+    """
+    Render: an enlarged single item on click 
+    """
     model = MerchandiseMod
     template_name = 'merchandise/merch_item.html'
     context_object_name = 'merch_item'
