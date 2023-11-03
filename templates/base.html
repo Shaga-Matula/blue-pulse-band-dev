@@ -72,10 +72,10 @@
                     </form>
                 </div>
                 <!-- Collapsible Nav Bar -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <!-- <span class="navbar-toggler-icon bg-white"></span> -->
-                </button>
+                    <span class="navbar-toggler-icon bg-white"></span>
+                </button> -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         {% if request.user.is_authenticated %}
@@ -112,16 +112,13 @@
                             <a class="nav-link" href="{% url 'all_merchandise' %}">All Merchandise</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">T-Shirts</a>
+                            <a class="nav-link" href="#">Clothes</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Cups & Bottles</a>
+                            <a class="nav-link" href="#">Memorabilia</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Pens & Keyrings</a>
-                        </li>
-                        <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Band CD</a>
+                            <a class="nav-link" href="#">Anthology CD</a>
                         </li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item second-navbar-li">

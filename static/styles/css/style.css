@@ -54,7 +54,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     white-space: nowrap;
-    font-size: larger;
+    font-size: ;
 }
 
 
@@ -69,14 +69,19 @@
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 140px);
     width: 100vw;
 }
 
 /* Footer phantom main page */
 
-.min-height-main-footer {
-    min-height: calc(100vh - 10px);
+.min-height {
+    min-height: calc(100vh - 350px);
+}
+
+.min-height-login{
+    
+    padding-top: 200px;
 }
 
 
@@ -232,7 +237,7 @@ audio {
 
 /* Remove gap at to of screen */
 @media(max-width: 767px) {
-    .min-height-main-footer,
+    .min-height,
     .adjust-index-height {
         align-items: flex-start;
         min-height: auto;
