@@ -3,7 +3,7 @@ from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
 
 def validate_mp3_file(value):
-    if not value.name.endswith('.mp3'):
+    if not value.format == 'mp3':
         raise ValidationError('Only MP3 files are allowed.')
 
 class MusicMod(models.Model):
@@ -12,6 +12,5 @@ class MusicMod(models.Model):
     song_file = CloudinaryField('raw', resource_type='auto', validators=[validate_mp3_file])
     song_image = CloudinaryField('image', default='placeholder')
 
-    
     def __str__(self):
         return f"{self.artist_name} - {self.song_title}"

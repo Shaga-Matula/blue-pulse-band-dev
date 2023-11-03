@@ -7,6 +7,7 @@ class CategoryMod(models.Model):
     CATEGORY_CHOICES = (
         ('clothes', 'Clothes'),
         ('memorabilia', 'Memorabilia'), 
+        ('cd', 'CD'), 
     )
 
     name = models.CharField(
@@ -32,8 +33,7 @@ class MerchandiseMod(models.Model):
         max_digits=6, decimal_places=2, verbose_name='Price')
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True, verbose_name='Rating')
-    image = CloudinaryField(
-        'image', default='placeholder', null=True, blank=True)
+    image = CloudinaryField('image', default='placeholder', null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'Merchandise'

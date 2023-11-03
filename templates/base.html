@@ -95,7 +95,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon bg-white"></span>
                 </button>
-        
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item second-navbar-li">
@@ -108,13 +108,13 @@
                             <a class="nav-link" href="{% url 'all_merchandise' %}">All Merchandise</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Clothes</a>
+                            <a class="nav-link" href="{% url 'all_merchandise' %}?category=clothes">Clothes</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Memorabilia</a>
+                            <a class="nav-link" href="{% url 'all_merchandise' %}?category=memorabilia">Memorabilia</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" href="#">Anthology CD</a>
+                            <a class="nav-link" href="{% url 'all_merchandise' %}?category=cd">Anthology CD</a>
                         </li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item second-navbar-li">
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </nav>
-        
+
     </header>
     <!-- Messages alert area -->
 

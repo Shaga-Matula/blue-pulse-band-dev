@@ -24,10 +24,17 @@
 /* Merchandis all */
 
 .card-img-top{
-    height: 300px;
-    width: auto;
+    max-width: 200%;
+    max-height: 200px; 
+    width: 100px;
+    height: 200px;
+
 }
 
+.card-music-height{
+  min-height: 50px;
+ 
+}
 
 
 

@@ -5,15 +5,16 @@
 {% load static %}
 
 <main class="container">
-    <h1 class="text-center text text-white lifeline-font" style="margin-top: 70px;"><i>Anthology</i></h1>
+    <h1 class="text-center text text-white lifeline-font"><i>Anthology</i></h1>
     <div class="row">
         {% for song in songs %}
+        <!-- Render Song Cards -->
         <div class="col-md-4 col-lg-3 col-sm-6 col-12 mb-4">
-            <div class="card song-card indigo-dye pt-2 h-100">
-                <img src="{{ song.song_image.url }}" class="mx-auto" alt="{{ song.song_title }} Image" width="200">
+            <div class="card song-card indigo-dye pt-2 ">
+                <img src="{{ song.song_image.url }}" class="mx-auto img-fluid" alt="{{ song.song_title }} Image" width="225" height="225">
                 <div class="card-body flex align-items-center justify-content-center">
-                    <h4 class="card-title text-center">{{ song.song_title }}</h4>
-                    <h5 class="card-subtitle text-center">{{ song.artist_name }}</h5>
+                    <h4 class="card-title text-center red card-music-height">{{ song.song_title }}</h4>
+                    <h5 class="card-subtitle text-center blue card-music-height">{{ song.artist_name }}</h5>
                     <!-- Remove download from slider -->
                     <audio controls controlsList="nodownload" id="songplay"
                         class="m-3 col-md-10 col-11 align-items-center justify-content-center">
