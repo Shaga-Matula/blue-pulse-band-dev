@@ -13,8 +13,7 @@
     width: 100vw;
 }
 
-
-
+/* Div Centering to left */
 .center-element {
     display: flex;
     justify-content: start;
@@ -23,22 +22,21 @@
 
 /* Merchandis all */
 
-.card-img-top{
-    max-width: 200%;
-    max-height: 200px; 
-    width: 100px;
-    height: 200px;
+.card-img-top {
+    max-width: 90%;
+    max-height: 80%;
+    width: 250px;
+    height: 250px;
 
 }
 
-.card-music-height{
-  min-height: 50px;
- 
+.card-music-height {
+    min-height: 50px;
+
 }
 
 
-
-/* Song page songs <ul> No Bullet */
+/* Song/Music/List  */
 
 .song-li {
     list-style-type: none;
@@ -70,12 +68,12 @@
 }
 
 /* Navbar Bottom */
-.second-navbar{
-    background-color:#001f2b;
-    
+.second-navbar {
+    background-color: #001f2b;
+
 }
-.second-navbar-li{
-    
+.second-navbar-li {
+
     padding-left: 25px;
     padding-right: 25px;
     color: #EAEAEA;
@@ -89,18 +87,14 @@
 }
 
 
-
-
-
-
 /* Footer phantom main page */
 
 .min-height {
     min-height: calc(100vh - 350px);
 }
 
-.min-height-login{
-    
+.min-height-login {
+
     padding-top: 200px;
 }
 
@@ -184,13 +178,12 @@ audio {
 
 }
 
+/* Cards */
 .item-discpt {
     color: white;
     font-size: small;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
 
 
 .card-title,
@@ -202,7 +195,7 @@ audio {
     color: antiquewhite;
 }
 
-/* detain main */
+/* Detail main */
 
 .detail-main-background {
     background-color: white;
@@ -216,6 +209,7 @@ audio {
     color: white;
     font-family: 'Open Sans', sans-serif;
 }
+
 /* Star Rating */
 .stars {
     display: inline-block;
@@ -227,7 +221,7 @@ audio {
     width: 20px;
     height: 20px;
     margin: 0 2px;
-    
+
 }
 
 .star.gold {
@@ -240,7 +234,7 @@ audio {
     background-color: #00415a
 }
 
-
+/* To Be deleted */
 .black-line {
     height: 20px;
     background-color: black;
@@ -252,16 +246,39 @@ audio {
     background-color: gold;
 }
 
+/* Shopping bag */
+
+.shopping-text{
+    color: white;
+}
+
+.shopping-text-hr{
+    color: white;
+    font-weight: 600;
+    height: 5px;
+}
+
+
+/* Bag Page */
+
+.btn-outline-black {
+    background: white;
+    color: black !important;    /*  Override link colors */
+    border: 1px solid black;
+}
+
 
 /* Media Sizes */
+/* ------------------------------------- */
 
-/* Remove gap at to of screen */
+
+/* Remove gap at to of small screen */
 @media(max-width: 767px) {
     .min-height,
     .adjust-index-height {
         align-items: flex-start;
         min-height: auto;
-        
-        
+
+
     }
 }
