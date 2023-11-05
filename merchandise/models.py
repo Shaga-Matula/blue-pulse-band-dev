@@ -29,6 +29,7 @@ class MerchandiseMod(models.Model):
                            blank=True, verbose_name='SKU')
     name = models.CharField(max_length=254, verbose_name='Name')
     description = models.TextField(verbose_name='Description')
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(
         max_digits=6, decimal_places=2, verbose_name='Price')
     rating = models.DecimalField(
