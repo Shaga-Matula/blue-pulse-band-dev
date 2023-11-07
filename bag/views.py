@@ -41,22 +41,27 @@ def add_to_bag(request, item_id):
 
 class AdjustBagView(View):
     def post(self, request, item_id):
-        """Adjust quantity """
+        """Adjust the quantity of the specified product to the specified amount"""
 
         quantity = int(request.POST.get('quantity'))
         size = None
-
         if 'product_size' in request.POST:
             size = request.POST['product_size']
         bag = request.session.get('bag', {})
 
         if size:
             if quantity > 0:
-                bag[item_id]['items_by_size'][size] = quantity
+                if item_id in bag:
+                    bag[item_id]['items_by_size'][size] = quantity
+                else:
+                    bag[item_id] = {
+                        'items_by_size': {size: quantity}
+                    }
             else:
-                del bag[item_id]['items_by_size'][size]
-                if not bag[item_id]['items_by_size']:
-                    bag.pop(item_id)
+                if item_id in bag and size in bag[item_id]['items_by_size']:
+                    del bag[item_id]['items_by_size'][size]
+                    if not bag[item_id]['items_by_size']:
+                        bag.pop(item_id)
         else:
             if quantity > 0:
                 bag[item_id] = quantity
@@ -69,4 +74,6 @@ class AdjustBagView(View):
 
 
 
+
+    
 
