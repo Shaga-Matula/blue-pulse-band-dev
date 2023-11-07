@@ -36,5 +36,8 @@
    },
    "[css]": {
       "editor.defaultFormatter": "mblode.pretty-formatter"
+   },
+   "[javascript]": {
+      "editor.defaultFormatter": "mblode.pretty-formatter"
    }
 }

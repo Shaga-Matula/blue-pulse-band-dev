@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['bluepulsedev-0cfcba8748ec.herokuapp.com', '127.0.0.1',
-                 '8000-shagamatula-bluepulseba-ohds842944g.ws-eu105.gitpod.io', 'bluepulsedev-0cfcba8748ec.herokuapp.com']
+                 '8000-shagamatula-bluepulseba-ohds842944g.ws-eu105.gitpod.io', 'bluepulsedev-0cfcba8748ec.herokuapp.com', '8000-shagamatula-bluepulseba-ohds842944g.ws-eu106.gitpod.io']
 
 
 # Application definition
