@@ -12,9 +12,16 @@
     min-height: calc(100vh - 140px);
     width: 100vw;
 }
+
+/* Padding Pages */
 .dave{
-    padding-top: 20vh;
+    padding-top: 20px;
 }
+
+.nav-padding-merch-item{
+    padding-top: 20px;
+}
+
 /* Div Centering to left */
 .center-element {
     display: flex;

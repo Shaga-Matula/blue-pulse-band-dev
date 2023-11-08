@@ -33,9 +33,11 @@ def add_to_bag(request, item_id):
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
+            messages.success(request, f'Added another {product.name} to your bag boy,o')
+            print("Another one")
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your bag')
+            messages.success(request, f'Added {product.name} to your bag big lad')
             print("This is a test message for views.py")
 
     request.session['bag'] = bag
