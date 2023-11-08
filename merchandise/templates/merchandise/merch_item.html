@@ -4,9 +4,9 @@
 
 
 {% block content %}
-<main class="container-fluid d-flex align-items-center justify-content-center min-height-main-footer">
-    <div class="container merch-item-height d-flex align-items-center justify-content-center rounded-4">
-        <div class="row">
+<main class="container-fluid d-flex align-items-center justify-content-center dave">
+    <div class="container  d-flex align-items-center justify-content-center rounded-4 ">
+        <div class="row merch-item-height">
             <!-- On Large Screens, Display Side by Side -->
             <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <img src="{{ merch_item.image.url }}" alt="{{ merch_item.name }}" class="img-fluid p-3 rounded-5" />
@@ -89,11 +89,7 @@
             </div>
         </div>
     </div>
-    <script src="{% static 'styles/js/quantity_update.js' %}"></script>
+
 </main>
-
 {% endblock %}
 
-{% block postloadjs %}
-
-{% endblock %}

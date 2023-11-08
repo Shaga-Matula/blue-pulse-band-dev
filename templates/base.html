@@ -26,19 +26,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/21d09db21b.js" crossorigin="anonymous"></script>
+    
     <!-- Css file location -->
     <link rel="stylesheet" type="text/css" href="{% static 'styles/css/style.css' %}">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
     <!-- Title -->
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
+    {% block corejs %}
+    <script src="https://kit.fontawesome.com/21d09db21b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% endblock %}
 
 
     {% block extra_javascript %}
@@ -150,7 +150,15 @@
     </header>
     <!-- Messages alert area -->
 
-    <div class="container border-5 msg-container" style="margin-top: 140px;">
+    {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+                {% include 'includes/toasts/toast_success.html' %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- <div class="container border-5 msg-container" style="margin-top: 140px;">
         <div class="row">
             <div class="col-md-6 offset-md-2">
                 {% for message in messages %}
@@ -161,7 +169,7 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div> -->
     {% block page_header %}
     {% endblock %}
 
@@ -169,6 +177,10 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+
        <!-- Message Timer -->
     <script>
         setTimeout(function () {

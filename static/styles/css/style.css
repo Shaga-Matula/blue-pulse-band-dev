@@ -12,13 +12,20 @@
     min-height: calc(100vh - 140px);
     width: 100vw;
 }
-
+.dave{
+    padding-top: 20vh;
+}
 /* Div Centering to left */
 .center-element {
     display: flex;
     justify-content: start;
     align-items: center;
 }
+/* page height */
+.distance-top-nav{
+    min-height: calc(100vh - 140px);
+}
+
 
 /* Signup/Signout/Signin */
 .signup-container {
@@ -336,6 +343,23 @@ audio {
     border: 1px solid black;
 }
 
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
 
 /* Media Sizes */
 /* ------------------------------------- */
