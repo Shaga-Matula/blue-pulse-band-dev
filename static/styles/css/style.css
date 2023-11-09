@@ -11,13 +11,11 @@
     background-repeat: no-repeat;
     min-height: calc(100vh - 140px);
     width: 100vw;
-    margin-top: 140px;
+    margin-top: 160px;
 }
 
 /* Padding Pages */
-.dave{
-    padding-top: 20px;
-}
+
 
 .nav-padding-merch-item{
     padding-top: 20px;
@@ -353,8 +351,12 @@ audio {
 
 
 /* ------------------------------- bootstrap toasts */
-
+.text-bg-bag-message {
+    background-color: #001f2b;
+    color: white;
+}
 .message-container {
+    
     position: fixed;
     top: 72px;
     right: 15px;
