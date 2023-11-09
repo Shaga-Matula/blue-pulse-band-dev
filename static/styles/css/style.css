@@ -29,7 +29,7 @@
     align-items: center;
 }
 /* page height */
-.distance-top-nav{
+.distance-top-na-v{
     min-height: calc(100vh - 140px);
 }
 
