@@ -55,9 +55,8 @@
 /* Merchandis all */
 
 .card-img-top {
-    max-width: 90%;
     max-height: 80%;
-    width: 250px;
+    width: auto;
     height: 250px;
 
 }

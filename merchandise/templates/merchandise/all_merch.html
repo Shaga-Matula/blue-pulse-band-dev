@@ -6,21 +6,21 @@
     <h1 class="text-center lifeline-font"> <i>Merchandise</i></h1>
     <!-- Rendering All Merchandise -->
     <div class="row justify-content-center align-items-center">
-        <div class="col-xxl-8 col-xl-6 col-md-8 col-sm-10 col-12">
-            <div class="row justify-content-center">
+        <div class="col-xxl-8 col-xl-6 col-md-8 col-sm-10 col-12 ">
+            <div class="row justify-content-center green">
                 {% for merch in all_merch %}
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 p-1">
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 p-1 blue">
                                 <div class="card indigo-dye">
-                            <a href="{% url 'merch_item' merch.id %}" class="mx-auto ">
+                            <a href="{% url 'merch_item' merch.id %}" class="mx-auto red">
                                 <img src="{{ merch.image.url }}" alt="{{ merch.name }}" class="card-img-top img-fluid p-3" />
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">{{ merch.name }}</h5>
                                 <p class="card-text">Price: €{{ merch.price }}</p>
                                 <p class="card-text">Category: {{ merch.category }}</p>
-                                <small class="text-muted rating">
-                                    <i class="fas fa-star mr-1 star" style="color: gold"></i>
-                                    {{ merch.rating }}/5
+                                <small class="text-muted rating ">
+                                    <i class="fas fa-star mr-1 star  " style="color: gold"></i>
+                                    <span class="text-white">{{ merch.rating }}/5 </span>
                                 </small>
                             </div>
                         </div>
