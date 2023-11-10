@@ -4,7 +4,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from merchandise.models import MerchandiseMod 
+from merchandise.models import MerchandiseMod
 from bag.contexts import bag_contents
 
 import stripe
