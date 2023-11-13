@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'musicapp',
     'bag',
     'checkout',
+    'profiles',
+    
 ]
 
 MESSAGE_TAGS = {
