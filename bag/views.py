@@ -20,7 +20,6 @@ def add_to_bag(request, item_id):
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-        print(f"Size Mate: {size}") 
     bag = request.session.get('bag', {})
 
     if size:
