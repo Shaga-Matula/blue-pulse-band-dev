@@ -25,7 +25,7 @@
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "ms-python.flake8",
    "[python]": {
-      "editor.defaultFormatter": "ms-python.python"
+      "editor.defaultFormatter": "trunk.io"
    },
    "[django-html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
