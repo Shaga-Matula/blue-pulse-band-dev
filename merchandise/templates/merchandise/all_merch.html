@@ -18,7 +18,8 @@
                         </a>
                         {% else %}
                         <a href="{% url 'merch_item' merch.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body">
@@ -29,6 +30,12 @@
                                 <i class="fas fa-star mr-1 star  " style="color: gold"></i>
                                 <span class="text-white">{{ merch.rating }}/5 </span>
                             </small>
+                            {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_product' merch.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' merch.id %}">Delete</a>
+                            </small>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
