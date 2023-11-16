@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.db.models import Q
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 
@@ -71,6 +71,30 @@ def add_merch(request):
     template = "merchandise/add_merch.html"
     context = {
         "form": form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """ Edit a product in the store """
+    product = get_object_or_404(MerchandiseMod, pk=product_id)
+    if request.method == 'POST':
+        form = MerchandiseForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('merch_item', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = MerchandiseForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'merchandise/edit_merch.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)

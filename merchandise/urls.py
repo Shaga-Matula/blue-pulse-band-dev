@@ -11,4 +11,5 @@ urlpatterns = [
         "all_merchandise/<int:pk>/", MerchandiseDetailView.as_view(), name="merch_item"
     ),
     path("add/", views.add_merch, name="add_merch"),
+    path('edit/<int:product_id>/', views.edit_product, name='edit_product'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
