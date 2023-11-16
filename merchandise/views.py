@@ -1,6 +1,7 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 
@@ -55,16 +56,22 @@ class MerchandiseDetailView(DetailView):
         return context
 
 
+@login_required
 def add_merch(request):
     """Add a product to the store"""
-    if request.method == 'POST':
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store administrators can do that.')
+        return redirect(reverse('home'))
+    if request.method == "POST":
         form = MerchandiseForm(request.POST, request.FILES)
         if form.is_valid():
             new_product = form.save()
-            messages.success(request, 'Successfully added product!')
-            return redirect(reverse('merch_item', args=[new_product.id]))
+            messages.success(request, "Successfully added product!")
+            return redirect(reverse("merch_item", args=[new_product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request, "Failed to add product. Please ensure the form is valid."
+            )
     else:
         form = MerchandiseForm()
 
@@ -76,33 +83,43 @@ def add_merch(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """Edit a product in the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store administrators can do that.')
+        return redirect(reverse('home'))
     product = get_object_or_404(MerchandiseMod, pk=product_id)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = MerchandiseForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
-            return redirect(reverse('merch_item', args=[product.id]))
+            messages.success(request, "Successfully updated product!")
+            return redirect(reverse("merch_item", args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request, "Failed to update product. Please ensure the form is valid."
+            )
     else:
         form = MerchandiseForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        messages.info(request, f"You are editing {product.name}")
 
-    template = 'merchandise/edit_merch.html'
+    template = "merchandise/edit_merch.html"
     context = {
-        'form': form,
-        'product': product,
+        "form": form,
+        "product": product,
     }
 
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """Delete a product from the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store administrators can do that.')
+        return redirect(reverse('home'))
     product = get_object_or_404(MerchandiseMod, pk=product_id)
     product.delete()
-    messages.success(request, 'Item deleted!')
-    return redirect(reverse('all_merchandise'))
+    messages.success(request, "Item deleted!")
+    return redirect(reverse("all_merchandise"))

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 
 from checkout.models import Order
@@ -7,8 +8,10 @@ from .forms import UserProfileForm
 from .models import UserProfile
 
 
+@login_required
 def profile(request):
     """Display the user's profile."""
+
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == "POST":
