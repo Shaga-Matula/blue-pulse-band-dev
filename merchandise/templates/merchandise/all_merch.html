@@ -33,7 +33,7 @@
                             {% if request.user.is_superuser %}
                             <small class="ml-3 mr-auto">
                                 <a href="{% url 'edit_product' merch.id %}">Edit</a>
-                                <!-- #javascript enabled Y/N all_merch.html -->
+                                <!-- #javascript enabled Y/N  -->
                                 <a href="{% url 'delete_product' merch.id %}"
                                     class="confirm-delete text-danger">Delete</a>
                             </small>

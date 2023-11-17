@@ -1,3 +1,8 @@
+/* test area */
+
+
+
+
 /* General page setup */
 
 .all-body {
@@ -515,4 +520,9 @@ audio {
 
 .allauth-form-inner-content a {
     color: #17a2b8; /* text-info */
+}
+
+.form-group-change .form-group, .div_id_song_image{
+    padding-bottom: 4px;
+    color: white !important;
 }

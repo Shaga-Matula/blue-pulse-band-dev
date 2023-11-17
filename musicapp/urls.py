@@ -1,9 +1,9 @@
-from django.contrib import admin
 from django.urls import path
-from . import views
 
+from .views import SongCreateView, SongListView, SongUpdateView
 
 urlpatterns = [
-    path("song_list", views.song_list, name="song_list"),
-    path("ramble", views.ramble, name="ramble"),
-] 
+    path("song_list", SongListView.as_view(), name="song_list"),
+    path("song_create/", SongCreateView.as_view(), name="song_create"),
+    path("song/update/<int:pk>/", SongUpdateView.as_view(), name="song_update"),
+]
