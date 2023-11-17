@@ -12,7 +12,8 @@
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button type="submit" class="mt-2">Update</button>
+                    <button type="submit" class="btn btn-danger ">Update</button>
+                    <a href="{% url 'song_list' %}" class="btn btn-secondary">Cancel</a>
                 </form>
             </div>
         </div>

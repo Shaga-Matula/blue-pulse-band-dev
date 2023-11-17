@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from .forms import MusicModForm
 from .models import MusicMod
@@ -38,3 +38,22 @@ class SongUpdateView(UpdateView):
             f"Successfully updated {form.instance.artist_name} - {form.instance.song_title}.",
         )
         return super().form_valid(form)
+
+
+class SongDeleteView(DeleteView):
+    model = MusicMod
+    template_name = "musicapp/song_confirm_delete.html"
+
+    def get_success_url(self):
+        return reverse_lazy("song_list")
+
+    def delete(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(self.request, "Sorry, only administrators can delete songs.")
+            return self.handle_no_permission()
+
+        messages.success(
+            self.request,
+            f"Successfully deleted {self.get_object().artist_name} - {self.get_object().song_title}.",
+        )
+        return super().delete(request, *args, **kwargs)

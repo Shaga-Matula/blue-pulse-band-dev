@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container header-container min-height" >
+    <div class="overlay"></div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="form-group-change">
+
+                <h2 class="text-white">Confirm Deletion</h2>
+                <p class="text-white">Are you sure you want to delete {{ object.artist_name }} - {{ object.song_title }}?</p>
+
+                <form method="post" action="{% url 'song_delete' pk=object.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger ">Delete</button>
+                    <a href="{% url 'song_list' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

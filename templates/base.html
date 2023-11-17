@@ -93,6 +93,7 @@
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'admin:index' %}" class="dropdown-item">Product Management</a>
                                 <a href="{% url 'add_merch' %}" class="dropdown-item">Add Merchandise</a>
+                                <a href="{% url 'song_create' %}" class="dropdown-item">Add Song</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -134,7 +135,7 @@
                             <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link" aria-current="page" href="#">Anthology</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'song_list' %}">Anthology</a>
                         </li>
                         <li class="nav-item second-navbar-li">
                             <a class="nav-link" href="{% url 'all_merchandise' %}">All Merchandise</a>

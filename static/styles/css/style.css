@@ -173,6 +173,7 @@
 
 .min-height {
     min-height: calc(100vh - 350px);
+    padding-top: 200px;
 }
 
 .min-height-login {
