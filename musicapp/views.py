@@ -1,9 +1,34 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-
-from .forms import MusicModForm
+from .forms import MusicModForm, UpdateForm, CommentForm
 from .models import MusicMod
+
+from django.views.generic import ListView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
+from .models import CommentMod
+# from django.urls import reverse_lazy
+
+
+from django.shortcuts import render, get_object_or_404
+
+
+class AllCommentsView(DetailView):
+    model = MusicMod
+    template_name = 'comments/all_comments.html'
+    context_object_name = 'music'
+
+    def get_object(self, queryset=None):
+        music_id = self.kwargs.get('music_id')
+        return get_object_or_404(MusicMod, pk=music_id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comments'] = self.object.comments.all()
+        return context
+
+
+
 
 
 class SongListView(ListView):
@@ -28,7 +53,7 @@ class SongCreateView(CreateView):
 
 class SongUpdateView(UpdateView):
     model = MusicMod
-    form_class = MusicModForm
+    form_class = UpdateForm
     template_name = "musicapp/song_update.html"
     success_url = reverse_lazy("song_list")
 
@@ -57,3 +82,8 @@ class SongDeleteView(DeleteView):
             f"Successfully deleted {self.get_object().artist_name} - {self.get_object().song_title}.",
         )
         return super().delete(request, *args, **kwargs)
+
+
+
+# ################################
+
