@@ -5,7 +5,8 @@
     <h2>All Songs with Comments</h2>
     {% for song in songs %}
     <h2>{{ song.artist_name }} - {{ song.song_title }}</h2>
-       
+ 
+    <img class="image-url-comment"src="{{ song.song_image.url }}" alt="{{ song.song_title }}">
     <ul>
         {% for comment in comments %}
         {% if comment.music == song %}
@@ -13,6 +14,7 @@
         {% endif %}
         {% endfor %}
     </ul>
+    <a href="{% url 'add_comment_to_song' pk=song.pk %}">Add Comment</a>
     {% endfor %}
 </div>
 {% endblock %}

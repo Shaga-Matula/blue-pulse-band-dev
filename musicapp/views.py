@@ -1,28 +1,61 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from .forms import MusicModForm, UpdateForm, CommentForm
-from .models import MusicMod
+from django.views import View
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 
-from django.views.generic import ListView, DetailView
-from django.views.generic import CreateView, UpdateView, DeleteView
-from .models import CommentMod
+from .forms import CommentForm, MusicModForm, UpdateForm
+from .models import CommentMod, MusicMod
+
 # from django.urls import reverse_lazy
 
 
-from django.shortcuts import render, get_object_or_404
+
+
+class AddCommentToSongView(View):
+    def get(self, request, pk):
+        song = get_object_or_404(MusicMod, pk=pk)
+        form = CommentForm()
+        return render(
+            request, "comments/add_comment.html", {"form": form, "song": song}
+        )
+
+    def post(self, request, pk):
+        song = get_object_or_404(MusicMod, pk=pk)
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.music = song
+            comment.user_profile = (
+                request.user.userprofile
+            )  # Associate the user profile with the comment
+            comment.save()
+            return redirect("song_all_comments")
+        return render(
+            request, "comments/add_comment.html", {"form": form, "song": song}
+        )
 
 
 class SongListCommentView(ListView):
     model = MusicMod
-    template_name = 'comments/all_songs_comments.html'
-    context_object_name = 'songs'
+    template_name = "comments/all_songs_comments.html"
+    context_object_name = "songs"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['comments'] = CommentMod.objects.all()
+        context["comments"] = CommentMod.objects.all()
         return context
+
+
 #############################################
+
 
 class SongListView(ListView):
     model = MusicMod
@@ -77,6 +110,4 @@ class SongDeleteView(DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-
 # ################################
-
