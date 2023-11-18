@@ -6,6 +6,16 @@ from crispy_forms.layout import Layout, Row, Column, Submit
 from django import forms
 from .models import MusicMod, CommentMod
 
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = CommentMod
+        fields = ['text']
+
+
+
+
 class MusicModForm(forms.ModelForm):
     class Meta:
         model = MusicMod

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>All Songs with Comments</h2>
+    {% for song in songs %}
+    <h2>{{ song.artist_name }} - {{ song.song_title }}</h2>
+       
+    <ul>
+        {% for comment in comments %}
+        {% if comment.music == song %}
+        <li>{{ comment.text }} - {{ comment.user_profile.user.username }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

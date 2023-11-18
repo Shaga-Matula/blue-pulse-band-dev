@@ -13,37 +13,16 @@ from .models import CommentMod
 from django.shortcuts import render, get_object_or_404
 
 
-
-class AllSongsWithCommentsView(ListView):
+class SongListCommentView(ListView):
     model = MusicMod
-    template_name = 'comments/all_songs_with_comments.html'
+    template_name = 'comments/all_songs_comments.html'
     context_object_name = 'songs'
 
-    def get_queryset(self):
-        return MusicMod.objects.all()
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['comments'] = CommentMod.objects.all()
         return context
-
-
-class AllCommentsView(DetailView):
-    model = MusicMod
-    template_name = 'comments/all_comments.html'
-    context_object_name = 'music'
-
-    def get_object(self, queryset=None):
-        music_id = self.kwargs.get('music_id')
-        return get_object_or_404(MusicMod, pk=music_id)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['comments'] = self.object.comments.all()
-        return context
-
-
-
-
+#############################################
 
 class SongListView(ListView):
     model = MusicMod
