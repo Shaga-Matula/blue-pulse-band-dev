@@ -20,7 +20,8 @@ from .models import CommentMod, MusicMod
 class CommentDeleteView(View):
     def get(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
-        return render(request, "comments/comment_delete.html", {"comment": comment})
+        comment.delete()
+        return redirect("song_all_comments")
 
     def post(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
