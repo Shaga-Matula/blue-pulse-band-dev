@@ -135,9 +135,11 @@
                         <li class="nav-item second-navbar-li">
                             <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item second-navbar-li">
                             <a class="nav-link" aria-current="page" href="{% url 'song_all_comments' %}">Comments</a>
                         </li>
+                        {% endif %}
                         <li class="nav-item second-navbar-li">
                             <a class="nav-link" aria-current="page" href="{% url 'song_list' %}">Anthology</a>
                         </li>
@@ -159,9 +161,16 @@
             </div>
         </nav>
         {% load account %}
-        {% if request.user.is_authenticated %}
-        <h4 class="align-items-center text-white p-1">Welcome, {{ user }}!</h4>
-        {% endif %}
+
+        <div class="d-none d-sm-block"> <!-- Hide on small screens -->
+            {% if request.user.is_authenticated %}
+            <h4 class="align-items-center text-white p-1">Welcome, {{ user }}!</h4>
+            {% else %}
+            <h4 class="align-items-center text-white p-1">Welcome, Guest!</h4>
+            {% endif %}
+        </div>
+
+
     </header>
     <!-- Messages alert area -->
     {% if messages %}
