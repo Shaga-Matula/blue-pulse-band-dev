@@ -12,6 +12,8 @@ class UserProfile(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # first_name = models.CharField(max_length=30)  # Add first name field
+    # last_name = models.CharField(max_length=150)  # Add last name field
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
