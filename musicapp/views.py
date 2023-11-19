@@ -16,19 +16,35 @@ from .models import CommentMod, MusicMod
 
 # from django.urls import reverse_lazy
 
+
+class CommentDeleteView(View):
+    def get(self, request, pk):
+        comment = get_object_or_404(CommentMod, pk=pk)
+        return render(request, "comments/comment_delete.html", {"comment": comment})
+
+    def post(self, request, pk):
+        comment = get_object_or_404(CommentMod, pk=pk)
+        comment.delete()
+        return redirect("song_all_comments")
+
+
 class SongCommentEditView(View):
     def get(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
         form = CommentForm(instance=comment)
-        return render(request, 'comments/comment_edit.html', {'form': form, 'comment': comment})
+        return render(
+            request, "comments/comment_edit.html", {"form": form, "comment": comment}
+        )
 
     def post(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            return redirect('song_all_comments')
-        return render(request, 'comments/comment_edit.html', {'form': form, 'comment': comment})
+            return redirect("song_all_comments")
+        return render(
+            request, "comments/comment_edit.html", {"form": form, "comment": comment}
+        )
 
 
 class AddCommentToSongView(View):
