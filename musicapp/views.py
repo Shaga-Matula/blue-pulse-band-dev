@@ -4,12 +4,9 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from .forms import CommentForm, MusicModForm
-from .models import CommentMod, MusicMod
+from .models import CommentMod, ContactMod, MusicMod
 
 ################################
-
-
-
 
 
 #################################
@@ -130,3 +127,39 @@ class SongDeleteView(DeleteView):
             f"Successfully deleted {self.get_object().artist_name} - {self.get_object().song_title}.",
         )
         return super().delete(request, *args, **kwargs)
+
+
+############# Contacts
+
+
+class ContactUsView(CreateView):
+    template_name = "comments/contact_us.html"
+
+    def post(self, request, *args, **kwargs):
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        msg = request.POST.get("msg")
+
+        contact = ContactMod(
+            fname=fname, lname=lname, email=email, phone=phone, msg=msg
+        )
+        contact.save()
+
+        messages.success(
+            request, "Your message was sent successfully. We will be in touch ASAP."
+        )
+
+        return redirect("home")
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+#############
+def error_404(request, exception):
+    """
+    This is a 404 page to catch errors
+    """
+    return render(request, "404.html", status=404)

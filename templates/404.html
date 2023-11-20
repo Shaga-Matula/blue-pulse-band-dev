@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="bg-dark text-white">
+    <!-- 404 page -->
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="text-center">
+            <h1>404 - NOT FOUND</h1>
+            <p>Whoops, looks like you broke a string!!</p>
+            <p><a href="{% url 'home' %}" class="text-light">Return to the main website</a></p>
+        </div>
+    </div>
+</body>
+{% endblock %}
