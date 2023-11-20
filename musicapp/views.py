@@ -6,7 +6,13 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from .forms import CommentForm, MusicModForm
 from .models import CommentMod, MusicMod
 
+################################
 
+
+
+
+
+#################################
 class CommentDeleteView(DeleteView):
     model = CommentMod
     success_url = reverse_lazy("song_all_comments")

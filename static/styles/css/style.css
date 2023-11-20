@@ -1,9 +1,39 @@
 /* test area */
-.image-url-comment{
+.image-url-comment {
     height: 50px;
 }
 
+/* Comments Template */
 
+.comments-card{
+    width: fit-content;
+    padding: 2%;
+}
+
+.comments-bg-color {
+    background-color: #00415a
+}
+
+.comments-edit-card {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    background-color: var(--bs-list-group-bg);
+    width: auto;
+}
+.comments-card-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+    color: white;
+}
+
+.author {
+    display: inline-block;
+    clear: both;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+
+}
 
 /* General page setup */
 
@@ -525,7 +555,8 @@ audio {
     color: #17a2b8; /* text-info */
 }
 
-.form-group-change .form-group, .div_id_song_image{
+.form-group-change .form-group,
+.div_id_song_image {
     padding-bottom: 4px;
     color: white !important;
 }

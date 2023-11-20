@@ -162,7 +162,7 @@
         </nav>
         {% load account %}
 
-        <div class="d-none d-sm-block"> <!-- Hide on small screens -->
+        <div class="d-none d-sm-block pt-2 pl-5"> <!-- Hide on small screens -->
             {% if request.user.is_authenticated %}
             <h4 class="align-items-center text-white p-1">Welcome back, {{ user }}!</h4>
             {% else %}
