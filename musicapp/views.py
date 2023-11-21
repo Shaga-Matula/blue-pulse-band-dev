@@ -1,8 +1,9 @@
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponseNotFound
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView, View
+
 from .forms import CommentForm, MusicModForm
 from .models import CommentMod, ContactMod, MusicMod
 
@@ -12,13 +13,19 @@ from .models import CommentMod, ContactMod, MusicMod
 class LikeCommentView(View):
     def post(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
-        user = request.user  
+        user = request.user
         if user.is_authenticated:
             if user not in comment.likes.all():
                 comment.likes.add(user)
-                # Save the like information to the database
+                success_message = f"You have successfully added a like to this comment"
+                messages.success(self.request, success_message)
                 comment.save()
-        return HttpResponseRedirect(reverse('song_all_comments'))
+            else:
+                success_message = f"You have already liked this comment"
+                messages.success(self.request, success_message)
+
+        return HttpResponseRedirect(reverse("song_all_comments"))
+
 
 #################################
 class CommentDeleteView(DeleteView):

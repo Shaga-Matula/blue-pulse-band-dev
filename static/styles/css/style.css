@@ -3,12 +3,30 @@
     height: 50px;
 }
 
+.like-button {
+
+    border: grey;
+    color: white;
+    background-color: green;
+    /* font-size: 24px;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust padding as needed */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.like-count {
+    margin-left: 5px; /* Adjust margin as needed */
+    color: black;
+    font-weight: bold;
+}
 /* Comments Template */
-#id_login{
-    background-color:white;
+#id_login {
+    background-color: white;
     color: black;
 }
-.comments-card{
+.comments-card {
     width: fit-content;
     padding: 2%;
 }
@@ -19,7 +37,7 @@
 
 .comments-edit-card {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:white;
+    color: white;
     background-color: var(--bs-list-group-bg);
     width: auto;
 }
@@ -159,7 +177,8 @@
     list-style-type: none;
 }
 
-.contact-us-title,.contact-us-label,
+.contact-us-title,
+.contact-us-label,
 .song-head {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #EAEAEA;
