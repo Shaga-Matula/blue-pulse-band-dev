@@ -62,7 +62,4 @@ class UpdateForm(forms.ModelForm):
 
 
 
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = CommentMod
-        fields = ['text']
+

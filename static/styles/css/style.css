@@ -4,7 +4,10 @@
 }
 
 /* Comments Template */
-
+#id_login{
+    background-color:white;
+    color: black;
+}
 .comments-card{
     width: fit-content;
     padding: 2%;

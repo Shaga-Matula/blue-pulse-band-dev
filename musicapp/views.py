@@ -1,13 +1,24 @@
 from django.contrib import messages
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView, View
 from .forms import CommentForm, MusicModForm
 from .models import CommentMod, ContactMod, MusicMod
 
-################################
+### like/dis-like
 
+
+class LikeCommentView(View):
+    def post(self, request, pk):
+        comment = get_object_or_404(CommentMod, pk=pk)
+        user = request.user  
+        if user.is_authenticated:
+            if user not in comment.likes.all():
+                comment.likes.add(user)
+                # Save the like information to the database
+                comment.save()
+        return HttpResponseRedirect(reverse('song_all_comments'))
 
 #################################
 class CommentDeleteView(DeleteView):
