@@ -100,6 +100,9 @@
 </main>
 {% endblock %}
 {% block postloadjs %}
+<script type="text/javascript">
+    $('.toast').toast('show');
+</script>
 <script src="{% static 'styles/js/quantity_update.js' %}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

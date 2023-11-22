@@ -20,11 +20,6 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(CommentMod, CommentAdmin)
 
 
-
-
-
-
-
 class ContactModAdmin(admin.ModelAdmin):
     list_display = [ 'fname', 'lname', 'email', 'phone', 'msg' , 'id']  # Correctly reference attributes of ContactMod
 
