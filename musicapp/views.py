@@ -11,12 +11,14 @@ from .models import CommentMod, ContactMod, MusicMod
 
 
 class LikeCommentView(View):
+    """ Gets likes from comments """
     def post(self, request, pk):
         comment = get_object_or_404(CommentMod, pk=pk)
         user = request.user
         if user.is_authenticated:
             if user not in comment.likes.all():
                 comment.likes.add(user)
+                comment.dislikes.remove(user) # remove from dislike
                 success_message = f"You have successfully added a like to this comment"
                 messages.success(self.request, success_message)
                 comment.save()
@@ -25,6 +27,24 @@ class LikeCommentView(View):
                 messages.success(self.request, success_message)
 
         return HttpResponseRedirect(reverse("song_all_comments"))
+
+class DisLikeCommentView(View):
+    def post(self, request, pk):
+        comment = get_object_or_404(CommentMod, pk=pk)
+        user = request.user
+        if user.is_authenticated:
+            if user not in comment.dislikes.all():
+                comment.dislikes.add(user)
+                comment.likes.remove(user)# remove from likes
+                success_message = f"You have successfully added a Dis-like to this comment"
+                messages.success(self.request, success_message)
+                comment.save()
+            else:
+                success_message = f"You have already dis liked this comment"
+                messages.success(self.request, success_message)
+
+        return HttpResponseRedirect(reverse("song_all_comments"))
+
 
 
 #################################

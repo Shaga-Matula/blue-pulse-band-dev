@@ -1,50 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container col-lg-6 col-md-8 col-sm-11 col-12 justify-content-between align-items-center ">
-    <h2 class="mb-4 text-center text-white">All Songs with Comments</h2>
+<div class="container">
+    <h2 class="mb-4 text-center title-all-song">All Songs with Comments</h2>
     {% for song in songs %}
-    <div class="card mb-4 ">
-        <div class="card-body text-white indigo-dye d-flex flex-column justify-content-center align-items-center  ">
+    <div class="card mb-4">
+        <div class="card-body all_song_card">
             <h2 class="card-title comments-card-title">{{ song.artist_name }} - {{ song.song_title }}</h2>
-            <ul class="list-group  col-11">
+            <ul class="list-group col-12">
                 {% for comment in comments %}
                 {% if comment.music == song %}
-                <div class="d-md-flex justify-content-between align-items-center comments-card-title">
-                    <li class="list-group-item col-12 rounded-3">
-                        <span class="text-center">{{ comment.text }}</span>
-                        <hr>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                -- {{ comment.user_profile.user.username }}
-                            </div>
-                            <div class="d-none d-sm-block">
-                                Created at: {{ comment.created_at }}
-                                <br>
-                                Modified at: {{ comment.modified_at }}
-                            </div>
-                            <form action="{% url 'like_post' comment.pk %}" method="POST">
+                <li class="list-group-item rounded-3">
+                    <span class="text-center">{{ comment.text }}</span>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            -- {{ comment.user_profile.user.username }}
+                        </div>
+                        <div class="d-none d-sm-block">
+                            Created at: {{ comment.created_at }}
+                            <br>
+                            Modified at: {{ comment.modified_at }}
+                        </div>
+                        <div class="d-flex">
+                            <!-- Like and Dislike buttons -->
+                            <form action="{% url 'like_post' comment.pk %}" method="POST" class="me-2">
                                 {% csrf_token %}
-                                <button type="submit" name="comment_id" value="{{ comment.id }}" class="like-button rounded-2">
-                                    <i class="fa-solid fa-thumbs-up like-button " >
-                                        {{ comment.likes.count }}
-                                   </i>
+                                <button type="submit" name="comment_id" value="{{ comment.id }}" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    {{ comment.likes.count }}
                                 </button>
                             </form>
-                       
-                            <div class="d-flex">
-                                {% if comment.user_profile.user == request.user or request.user.is_superuser %}
-                                <!-- User who wrote the comment or a superuser  -->
-                                <a href="{% url 'edit_comment' pk=comment.pk %}"
-                                    class="btn btn-primary btn-sm me-2">Edit</a>
-                                <!-- Y/N JavaScript -->
-                                <a href="{% url 'comment_delete' comment.pk %}"
-                                    class="btn btn-danger confirm-delete btn-sm">Delete</a>
-                                {% endif %}
-                            </div>
+                            <form action="{% url 'dis_like_post' comment.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" name="comment_id" value="{{ comment.id }}" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-thumbs-down"></i>
+                                    {{ comment.dislikes.count }}
+                                </button>
+                            </form>
                         </div>
-                    </li>
-                </div>
+                        <div class="d-flex flex-column flex-sm-row">
+                            {% if comment.user_profile.user == request.user or request.user.is_superuser %}
+                            <div class="mb-2 mb-sm-0 me-0 me-sm-2">
+                                <a href="{% url 'edit_comment' pk=comment.pk %}" class="btn btn-primary btn-sm btn-del-edit tester" >Edit</a>
+                            </div>
+                            <div>
+                                <a href="{% url 'comment_delete' comment.pk %}" class="btn btn-danger btn-sm btn-del-edit" >Delete</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
                 <hr>
                 {% endif %}
                 {% endfor %}
@@ -55,11 +61,25 @@
     {% endfor %}
 </div>
 {% endblock %}
-
 {% block postloadjs %}
+<!-- Toasts -->
 <script type="text/javascript">
     $('.toast').toast('show');
 </script>
+<!-- Scroll back to comment -->
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var scrollpos = localStorage.getItem('scrollpos');
+        if (scrollpos) window.scrollTo(0, scrollpos);
+
+    });
+
+    window.onbeforeunload = function (e) {
+        localStorage.setItem('scrollpos', window.scrollY);
+    };
+</script>
+
+<!-- Extra delete confirmation -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Wait for the DOM to be fully loaded before attaching the click event handler
