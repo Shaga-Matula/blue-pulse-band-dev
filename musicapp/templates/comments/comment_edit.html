@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="comments-card container d-flex flex-column justify-content-center align-items-center comments-bg-color">
-    <h1 class="comments-edit-card mb-4">Edit Comment</h1>
-    <form method="post" class="text-white comments-edit-card">
+<div class="comments-card container col-10 col-sm-3 d-flex flex-column justify-content-center align-items-center comments-bg-color">
+    <h1 class="comments-edit-card ">Edit a Comment</h1>
+    <form method="post" class="m-2">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Summernote for id_text -->
+        <script>
+            $(document).ready(function () {
+                $('#id_text').summernote();
+            });
+        </script>
+        <button type="submit">Submit</button>
     </form>
 </div>
-{% endblock %}

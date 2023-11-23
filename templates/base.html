@@ -25,11 +25,15 @@
     {% endblock %}
 
     {% block corecss %}
+    <!-- Include Summernote CSS from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css">
+
     <!-- Font Awsome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
+    <!-- Summer Note -->
+    <link rel="stylesheet" href="{% static 'styles/css/custom-summernote.css' %}">
     <!-- Css file location -->
     <link rel="stylesheet" type="text/css" href="{% static 'styles/css/style.css' %}">
     <!-- Favicon -->
@@ -147,7 +151,7 @@
                             <a class="nav-link" aria-current="page" href="{% url 'song_all_comments' %}">Comments</a>
                         </li>
                         {% endif %}
-                        
+
                         <li class="nav-item second-navbar-li">
                             <a class="nav-link" href="{% url 'all_merchandise' %}">All Merchandise</a>
                         </li>
@@ -216,10 +220,17 @@
             alert.close();
         }, 2500);
     </script> -->
+    <!-- Include Summernote JS from CDN -->
+
     <script src="{% static 'styles/js/quantity_update.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
+
+
+
     {% endblock %}
 
 

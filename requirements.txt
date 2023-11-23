@@ -10,6 +10,7 @@ django-allauth==0.41.0
 django-contrib-comments==2.2.0
 django-countries==7.2.1
 django-crispy-forms==1.14.0
+django-summernote==0.8.20.0
 djlint==1.34.0
 EditorConfig==0.12.3
 gunicorn==21.2.0

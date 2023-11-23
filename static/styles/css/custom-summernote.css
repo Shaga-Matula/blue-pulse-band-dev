@@ -1,0 +1,21 @@
+
+/* Common styles for all screen sizes */
+div.note-editable {
+    font-size: 16px !important; /* Font size of the content */
+    line-height: 1.6 !important; /* Line height of the content */
+    padding: 15px !important;   /* Padding for the content */
+    background-color: #ecf0f1 !important; /* Clouds */
+    border: 1px solid #bdc3c7 !important; /* Silver */
+    border-radius: 4px !important; /* Border radius of the content area */
+    height: 70% !important; /* Adjust the height as needed */
+    max-width: 600px !important; /* Set a maximum width for the content area */
+    margin: 0 auto !important; /* Center the content horizontally */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    div.note-editable {
+        min-height: 100% !important; /* Adjust the height for small screens */
+    }
+}
+
