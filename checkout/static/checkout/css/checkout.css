@@ -76,10 +76,9 @@ select option[value=""] {
     height: 100%;
 }
 
-/* Recipt Mail */
+/* Checkout Success */
 
 .text-black,
-
 .font-weight-bold,
 .small,
 .btn,
@@ -94,5 +93,4 @@ select option[value=""] {
 .heading-color {
     color: blue;
     font-size: large;
-
 }

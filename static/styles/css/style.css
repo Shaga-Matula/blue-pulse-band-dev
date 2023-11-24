@@ -3,6 +3,22 @@
     height: 50px;
 }
 
+.text-edit-merch .form-group label,
+.text-edit-merch,
+#div_id_category,
+#div_id_sku,
+#div_id_price,
+#div_id_name,
+#div_id_rating,
+#div_id_rating p,
+#div_id_has_sizes,
+#div_id_description,
+.text-add-merch{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+
+}
+
 
 .btn-del-edit{
     min-width: 60px;
