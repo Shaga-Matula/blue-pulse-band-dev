@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "bag",
     "checkout",
     "profiles",
+    "newsletter",
 ]
 
 MESSAGE_TAGS = {

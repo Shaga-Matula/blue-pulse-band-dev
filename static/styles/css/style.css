@@ -3,6 +3,15 @@
     height: 50px;
 }
 
+/* News Letter */
+
+.newsletter-format{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: #00415a;
+}
+
+
+/* Allauth Forms */
 .text-edit-merch .form-group label,
 .text-edit-merch,
 #div_id_category,

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container header-container">
+    <div class="overlay"></div>
+    <div class="row">
+        <div class=" col-md-6 col-sm-10 col-11">
+            <div class="form-group-change newsletter-format p-5 rounded-3">
+                <body>
+                    <h2 class="text-white">Subscription Successful</h2>
+                    <p class="text-white">Thank you for subscribing to NewsLetterMod! You will receive updates in your email.</p>
+                </body>
+                    <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

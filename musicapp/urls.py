@@ -24,8 +24,7 @@ urlpatterns = [
     path("song_delete/<int:pk>/", SongDeleteView.as_view(), name="song_delete"),
     # Comments
     path("song_all_comments/", SongListCommentView.as_view(), name="song_all_comments"),
-    path(
-        "song/<int:pk>/add_comment/",
+    path("song/<int:pk>/add_comment/",
         AddCommentToSongView.as_view(),
         name="add_comment_to_song",
     ),
