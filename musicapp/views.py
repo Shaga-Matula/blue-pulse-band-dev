@@ -175,7 +175,7 @@ class ContactUsView(CreateView):
     template_name = "comments/contact_us.html"
     model = ContactMod  # Replace with the actual import path for your ContactMod model
     fields = ['fname', 'lname', 'email', 'phone', 'msg']  # List all the fields in your form
-    success_url = reverse_lazy("song_list")
+    success_url = reverse_lazy("contact_us")
 
     def form_valid(self, form):
         # Save the form data to the database
@@ -218,6 +218,10 @@ class ContactUsView(CreateView):
 
         
         return reverse("contact_us")
+
+
+
+
 #############
 def error_404(request, exception):
     """
