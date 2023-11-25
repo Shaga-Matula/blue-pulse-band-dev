@@ -1,49 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="d-flex align-items-center justify-content-center ">
-    <section class="rounded mx-auto border-5 col-xxl-6 col-xl-6 col-lg-6 col-md-9 col-sm-12 ">
-        <div class="row border-5   p-3">
-            <aside class="container col-md-6 col-lg-4 order-2 order-md-2 mt-1 mb-1 ">
+<main class="d-flex align-items-center justify-content-center min-height ">
+    <section class="container d-flex flex-lg-row flex-column justify-content-start align-items-center distance-top-nav">
+        <div class=" col-6 col-md-8 cpl-sm-12 col-12 ">
+
+            <aside class="container col-lg-6 col-md-10 col-sm-12">
                 <form class="my-1" method="post" action="#">
                     {% csrf_token %}
                     <fieldset>
-                        <section>
-                            
+                        <div class="col-12">
                             <h2 class="contact-us-title"><strong>Get In Touch</strong></h2>
-
                             <div class="form-group contact-us-label">
                                 <label for="fname ">First Name:</label>
                                 <input type="text" class="form-control" name="fname" id="fname" required>
                             </div>
-
                             <div class="form-group contact-us-label">
                                 <label for="lname ">Last Name:</label>
                                 <input type="text" class="form-control" name="lname" id="lname" required>
                             </div>
-
                             <div class="form-group contact-us-label">
                                 <label for="email">Email Address:</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
                             </div>
-
                             <div class="form-group contact-us-label">
                                 <label for="phone">Phone Number: </label>
                                 <input type="tel" class="form-control" name="phone" id="phone" required>
                             </div>
-
                             <div class="form-group contact-us-label">
                                 <label for="msg">Message: </label>
                                 <textarea class="form-control" name="msg" id="message-us" rows="5" required></textarea>
                             </div>
-
-                            
-
-                            <button type="submit" class="btn btn-primary mt-4 contact-us-label">Send Message</button>
-                        </section>
+                            <button type="submit" class="btn btn-primary mt-4 contact-us-label">Send
+                                Message</button>
+                        </div>
                     </fieldset>
                 </form>
             </aside>
+
+        </div>
+        <div class="d-flex align-items-center justify-content-center ">
+            <div class="card col-lg-8 col-md-8 col-sm-10 col-10  d-flex justify-content-center newsletter-format rounded-4">
+                <div class="card-body text-center newsletter-format rounded-4">
+                    <h5 class="card-title newsletter-format">Subscribe to Our Newsletter</h5>
+                    <p class="card-text newsletter-format">Stay updated with the latest news and updates!</p>
+                    <a href="{% url 'subscribe' %}" class="btn btn-primary">Join Now</a>
+                </div>
+            </div>
+
         </div>
     </section>
 </main>

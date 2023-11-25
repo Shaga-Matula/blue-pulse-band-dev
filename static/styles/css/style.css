@@ -257,8 +257,8 @@
 /* Footer phantom main page */
 
 .min-height {
-    min-height: calc(100vh - 350px);
-    padding-top: 200px;
+    min-height: calc(100vh - 300px);
+    padding-top: 100px;
 }
 
 .min-height-login {
@@ -531,7 +531,8 @@ audio {
     .min-height,
     .adjust-index-height {
         align-items: flex-start;
-        min-height: auto;
+        min-height: 0;
+        padding-top: 0%;
     }
 }
 
