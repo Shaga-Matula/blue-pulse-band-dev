@@ -1,11 +1,9 @@
 from django.contrib import messages
+from django.core.mail import send_mail, settings
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView, View
-
-from django.contrib import messages
-from django.core.mail import send_mail, settings
 
 from .forms import CommentForm, MusicModForm
 from .models import CommentMod, ContactMod, MusicMod
@@ -198,19 +196,28 @@ class ContactUsView(CreateView):
         messages.error(self.request, "There was an error with your submission. Please check your input.")
         return super().form_invalid(form)
 
-    def send_notification_email(self):
-        # Retrieve the data from the saved form instance
+    def send_verification_email(self):
         instance = self.object
 
-        # Send email notification to 'bluepulseband@gmail.com' 
-        subject = 'New Contact Form Submission'
-        message = f'A new contact form submission:\n\nName: {instance.fname} {instance.lname}\nEmail: {instance.email}\nPhone: {instance.phone}\nMessage: {instance.msg}'
-        from_email = 'bluepulseband@gmail.com'  
-        recipient_list = ['bluepulseband@gmail.com']
+        # Send email to the user for verification
+        user_subject = 'Contact Form Submission Verification'
+        user_message = f'Thank you for contacting us! Your message has been received.\n\nMessage: {instance.msg}'
+        user_from_email = 'bluepulseband@gmail.com'  
+        user_recipient_list = [instance.email]
 
-        send_mail(subject, message, from_email, recipient_list)
+        send_mail(user_subject, user_message, user_from_email, user_recipient_list)
 
-        return reverse("home")
+    def send_notification_email(self):
+        instance = self.object
+
+        # Send email notification to 'bluepulseband@gmail.com'
+        admin_subject = 'New Contact Form Submission'
+        admin_message = f'A new contact form submission:\n\nName: {instance.fname} {instance.lname}\nEmail: {instance.email}\nPhone: {instance.phone}\nMessage: {instance.msg}'
+        admin_from_email = 'bluepulseband@gmail.com'  
+        admin_recipient_list = ['bluepulseband@gmail.com']
+
+        
+        return reverse("contact_us")
 #############
 def error_404(request, exception):
     """
