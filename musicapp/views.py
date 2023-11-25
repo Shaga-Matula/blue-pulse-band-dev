@@ -4,6 +4,9 @@ from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView, View
 
+from django.contrib import messages
+from django.core.mail import send_mail, settings
+
 from .forms import CommentForm, MusicModForm
 from .models import CommentMod, ContactMod, MusicMod
 
@@ -172,29 +175,42 @@ class SongDeleteView(DeleteView):
 
 class ContactUsView(CreateView):
     template_name = "comments/contact_us.html"
+    model = ContactMod  # Replace with the actual import path for your ContactMod model
+    fields = ['fname', 'lname', 'email', 'phone', 'msg']  # List all the fields in your form
+    success_url = reverse_lazy("song_list")
 
-    def post(self, request, *args, **kwargs):
-        fname = request.POST.get("fname")
-        lname = request.POST.get("lname")
-        email = request.POST.get("email")
-        phone = request.POST.get("phone")
-        msg = request.POST.get("msg")
+    def form_valid(self, form):
+        # Save the form data to the database
+        response = super().form_valid(form)
 
-        contact = ContactMod(
-            fname=fname, lname=lname, email=email, phone=phone, msg=msg
-        )
-        contact.save()
+        # Send email notification
+        self.send_notification_email()
 
+        # Display success message
         messages.success(
-            request, "Your message was sent successfully. We will be in touch ASAP."
+            self.request, "Your message was sent successfully. We will be in touch ASAP."
         )
 
-        return redirect("home")
+        return response
 
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+    def form_invalid(self, form):
+        # Handle form validation errors
+        messages.error(self.request, "There was an error with your submission. Please check your input.")
+        return super().form_invalid(form)
 
+    def send_notification_email(self):
+        # Retrieve the data from the saved form instance
+        instance = self.object
 
+        # Send email notification to 'bluepulseband@gmail.com' 
+        subject = 'New Contact Form Submission'
+        message = f'A new contact form submission:\n\nName: {instance.fname} {instance.lname}\nEmail: {instance.email}\nPhone: {instance.phone}\nMessage: {instance.msg}'
+        from_email = 'bluepulseband@gmail.com'  
+        recipient_list = ['bluepulseband@gmail.com']
+
+        send_mail(subject, message, from_email, recipient_list)
+
+        return reverse("home")
 #############
 def error_404(request, exception):
     """
