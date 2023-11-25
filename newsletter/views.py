@@ -1,7 +1,7 @@
 from django.core.mail import send_mail, settings
 from django.shortcuts import redirect, render
 from django.views import View
-
+from django.contrib import messages 
 from .forms import SubscribeForm
 from .models import NewsLetterMod
 
