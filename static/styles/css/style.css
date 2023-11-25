@@ -338,9 +338,8 @@ audio {
 
 /* Allauth  */
 
-.login label, .login .error-message, .login input[type="email"], #id_remember {
-    color: white;
-}
+/*  */
+
 
 /* Cards */
 .item-discpt {
@@ -590,6 +589,10 @@ audio {
 
 .allauth-form-inner-content a {
     color: #17a2b8; /* text-info */
+}
+
+.login label, .login .error-message, .login input[type="email"], #id_remember {
+    color: white;
 }
 
 .form-group-change .form-group,
