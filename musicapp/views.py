@@ -204,6 +204,7 @@ class ContactUsView(CreateView):
         user_message = f'Thank you for contacting us! Your message has been received.\n\nMessage: {instance.msg}'
         user_from_email = 'bluepulseband@gmail.com'  
         user_recipient_list = [instance.email]
+        print(f"User Recipient List: {user_recipient_list}")
 
         send_mail(user_subject, user_message, user_from_email, user_recipient_list)
 
@@ -217,7 +218,7 @@ class ContactUsView(CreateView):
         admin_recipient_list = ['bluepulseband@gmail.com']
 
         send_mail(admin_subject, admin_message, admin_from_email, admin_recipient_list)
-        
+
         return reverse("contact_us")
 
 
