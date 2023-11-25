@@ -214,7 +214,7 @@ class ContactUsView(CreateView):
     def send_notification_email(self):
         instance = self.object
 
-        # Send email notification to 'bluepulseband@gmail.com'
+        # Send email notification to admin 'bluepulseband@gmail.com'
         admin_subject = 'New Contact Form Submission'
         admin_message = f'A new contact form submission:\n\nName: {instance.fname} {instance.lname}\nEmail: {instance.email}\nPhone: {instance.phone}\nMessage: {instance.msg}'
         admin_from_email = 'bluepulseband@gmail.com'  
