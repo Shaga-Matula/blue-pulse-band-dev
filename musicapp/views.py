@@ -216,6 +216,7 @@ class ContactUsView(CreateView):
         admin_from_email = 'bluepulseband@gmail.com'  
         admin_recipient_list = ['bluepulseband@gmail.com']
 
+        send_mail(admin_subject, admin_message, admin_from_email, admin_recipient_list)
         
         return reverse("contact_us")
 
