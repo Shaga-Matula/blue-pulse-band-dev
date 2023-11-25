@@ -181,6 +181,9 @@ class ContactUsView(CreateView):
         # Save the form data to the database
         response = super().form_valid(form)
 
+        # Send verification email to the user
+        self.send_verification_email()
+
         # Send email notification
         self.send_notification_email()
 
@@ -220,8 +223,6 @@ class ContactUsView(CreateView):
         send_mail(admin_subject, admin_message, admin_from_email, admin_recipient_list)
 
         return reverse("contact_us")
-
-
 
 
 #############
