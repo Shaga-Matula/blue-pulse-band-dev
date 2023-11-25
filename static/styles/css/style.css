@@ -5,7 +5,7 @@
 
 /* News Letter */
 
-.newsletter-format{
+.newsletter-format {
     font-family: Georgia, "Times New Roman", Times, serif;
     background-color: #00415a;
 }
@@ -22,14 +22,14 @@
 #div_id_rating p,
 #div_id_has_sizes,
 #div_id_description,
-.text-add-merch{
+.text-add-merch {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: white;
 
 }
 
 
-.btn-del-edit{
+.btn-del-edit {
     min-width: 60px;
 }
 
@@ -238,6 +238,12 @@
 }
 
 /* Navbar Bottom */
+
+.textInput,
+.textinput,
+.form-control {
+    color: black;
+}
 .second-navbar {
     background-color: #001f2b;
 }
@@ -332,11 +338,7 @@ audio {
 
 /* Allauth  */
 
-.login label,
-.login .error-message,
-.login input[type="text"],
-.login input[type="email"],
-.login input[type="password"] {
+.login label, .login .error-message, .login input[type="email"], #id_remember {
     color: white;
 }
 
@@ -532,7 +534,7 @@ audio {
     .adjust-index-height {
         align-items: flex-start;
         min-height: 0;
-        padding-top: 0%;
+        padding-top: 0;
     }
 }
 
