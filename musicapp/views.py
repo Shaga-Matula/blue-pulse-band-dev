@@ -226,7 +226,7 @@ class ContactUsView(CreateView):
 
 
 #############
-def error_404(request, exception):
+def handler404(request, exception):
     """
     This is a 404 page to catch errors
     """

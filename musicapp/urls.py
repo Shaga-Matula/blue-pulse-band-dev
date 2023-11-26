@@ -1,20 +1,21 @@
 from django.conf import settings
-from . import views
 from django.conf.urls.static import static
-from django.urls import path 
+from django.urls import path
 
+from . import views
 from .views import (
     AddCommentToSongView,
     CommentDeleteView,
+    ContactUsView,
+    DisLikeCommentView,
+    LikeCommentView,
     SongCommentEditView,
     SongCreateView,
     SongDeleteView,
     SongListCommentView,
     SongListView,
     SongUpdateView,
-    ContactUsView,
-    LikeCommentView,
-    DisLikeCommentView,
+    handler404,
 )
 
 urlpatterns = [
@@ -24,7 +25,8 @@ urlpatterns = [
     path("song_delete/<int:pk>/", SongDeleteView.as_view(), name="song_delete"),
     # Comments
     path("song_all_comments/", SongListCommentView.as_view(), name="song_all_comments"),
-    path("song/<int:pk>/add_comment/",
+    path(
+        "song/<int:pk>/add_comment/",
         AddCommentToSongView.as_view(),
         name="add_comment_to_song",
     ),
@@ -32,10 +34,10 @@ urlpatterns = [
     path(
         "comment/<int:pk>/delete/", CommentDeleteView.as_view(), name="comment_delete"
     ),
-    path('contact_us/', ContactUsView.as_view(), name='contact_us'),
-    path('like/<int:pk>/', LikeCommentView.as_view(), name='like_post'),
-    path('dislike/<int:pk>/', DisLikeCommentView.as_view(), name='dis_like_post'),
-
+    path("contact_us/", ContactUsView.as_view(), name="contact_us"),
+    path("like/<int:pk>/", LikeCommentView.as_view(), name="like_post"),
+    path("dislike/<int:pk>/", DisLikeCommentView.as_view(), name="dis_like_post"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = "musicapp.views.error_404"
+
+handler404 = "musicapp.views.handler404"

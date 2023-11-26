@@ -229,14 +229,12 @@ def checkout_success(request, order_number):
 
 
 def send_iso_email(order):
-    # Use 'order' directly instead of 'self.object'
+    # Id cd bought send ISO
     instance = order
 
-        # Send email to the user for verification
+    # Send email to the user for verification
     user_subject = 'Congratulations on buying our CD ISO'
-    user_message = 'Here is a link to your ISO file...  '
+    user_message = 'Here is a link to your ISO file... http:\\your_cd.ect and the unlock code is "ZZTOP"  '
     user_from_email = 'bluepulseband@gmail.com'
     user_recipient_list = [instance.email]
-    print(f"User Recipient List: {user_recipient_list}")
-
     send_mail(user_subject, user_message, user_from_email, user_recipient_list)
