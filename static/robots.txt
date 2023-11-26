@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /view_bag
+Disallow: /newsletter/
+Disallow: /all_merchandise/
+Disallow: /accounts/password/reset/
+Disallow: /checkout/
+Disallow: /cache_checkout_data/
+
+Sitemap: https://bluepulsepp5-165b4a2f3a08.herokuapp.com/sitemap.xml

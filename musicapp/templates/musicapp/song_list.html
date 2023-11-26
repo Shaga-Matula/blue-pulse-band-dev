@@ -47,6 +47,7 @@
 
 {% endblock %}
 {% block postloadjs %}
+{{ block.super }}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Wait for the DOM to be fully loaded before attaching the click event handler

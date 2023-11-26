@@ -62,22 +62,30 @@
 </div>
 {% endblock %}
 {% block postloadjs %}
+{{ block.super }}
 <!-- Toasts -->
 <script type="text/javascript">
     $('.toast').toast('show');
 </script>
 <!-- Scroll back to comment -->
+
 <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-        var scrollpos = localStorage.getItem('scrollpos');
-        if (scrollpos) window.scrollTo(0, scrollpos);
+    const currentPathname = window.location.pathname;
 
+    document.querySelectorAll('.nav-bar-status').forEach(link => {
+        const linkPathname = new URL(link.href).pathname;
+
+        console.log('Link Href:', linkPathname);
+        console.log('Current URL:', currentPathname);
+
+        // Compare only the pathname part of the URL
+        if (currentPathname === linkPathname) {
+            console.log('Setting aria-current to page');
+            link.setAttribute('aria-current', 'page');
+        }
     });
-
-    window.onbeforeunload = function (e) {
-        localStorage.setItem('scrollpos', window.scrollY);
-    };
 </script>
+
 
 <!-- Extra delete confirmation -->
 <script>

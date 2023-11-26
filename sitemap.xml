@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- Thanks to Online Sitemap Generator -->
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/view_bag</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/contact_us/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/song_list</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/?category=clothes</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/?category=memorabilia</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/?category=cd</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/newsletter/subscribe/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/5/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/6/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/1/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/3/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/2/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/4/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/8/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/11/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/13/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/10/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/14/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/9/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/12/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/15/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/16/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/17/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/18/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://bluepulsepp5-165b4a2f3a08.herokuapp.com/all_merchandise/19/</loc>
+  <lastmod>2023-11-26T17:28:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

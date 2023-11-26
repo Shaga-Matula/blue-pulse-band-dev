@@ -92,7 +92,11 @@
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg text-white"></i></div>
+                                    {% if request.user.is_authenticated %}
                                     <p class="my-0 text-white">My Account</p>
+                                    {% else %}
+                                    <p class="my-0 text-white">Register/Login</p>
+                                    {% endif %}
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -129,47 +133,63 @@
                 </div>
             </div>
         </nav>
-        <!-- Second Navbar (White Background) -->
+        <!-- Second Navbar -->
         <nav class="navbar navbar-expand-lg second-navbar">
             <div class="container align-content-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon bg-white"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse second-navbar-li" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item second-navbar-li">
-
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'song_list' %}">Anthology</a>
+                            <a class="nav-link nav-bar-status {% if request.path == '/song_list/' %}active{% endif %}" aria-current=""
+                                href="{% url 'song_list' %}">Anthology</a>
                         </li>
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'contact_us' %}">Contact Us</a>
+                            <a class="nav-link nav-bar-status {% if request.path == '/contact_us/' %}active{% endif %}" aria-current=""
+                                href="{% url 'contact_us' %}">Contact Us</a>
                         </li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'song_all_comments' %}">Comments</a>
+                            <a class="nav-link nav-bar-status" aria-current=""
+                                href="{% url 'song_all_comments' %}">Comments</a>
                         </li>
                         {% endif %}
 
-                        <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'all_merchandise' %}">All Merchandise</a>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link nav-bar-status dropdown-toggle" aria-current="" href="#" role="button"
+                                id="merchandiseDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Merchandise
+                            </a>
+                            <div class="dropdown-menu border-0 custom-dropdown-menu "
+                                aria-labelledby="merchandiseDropdown">
+                                <ul class="navbar-nav flex-column">
+                                    <!-- Change the class to 'flex-column' for a vertical layout -->
+                                    <li class="nav-item second-navbar-li second-navbar">
+                                        <a class="nav-link nav-bar-status" href="{% url 'all_merchandise' %}">All
+                                            Merchandise</a>
+                                    </li>
+                                    <li class="nav-item second-navbar-li second-navbar">
+                                        <a class="nav-link nav-bar-status"
+                                            href="{% url 'all_merchandise' %}?category=clothes">Clothes</a>
+                                    </li>
+                                    <li class="nav-item second-navbar-li second-navbar">
+                                        <a class="nav-link nav-bar-status"
+                                            href="{% url 'all_merchandise' %}?category=memorabilia">Memorabilia</a>
+                                    </li>
+                                    <li class="nav-item second-navbar-li second-navbar">
+                                        <a class="nav-link nav-bar-status"
+                                            href="{% url 'all_merchandise' %}?category=cd">Anthology CD</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'all_merchandise' %}?category=clothes">Clothes</a>
-                        </li>
-                        <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'all_merchandise' %}?category=memorabilia">Memorabilia</a>
-                        </li>
-                        <li class="nav-item second-navbar-li">
-                            <a class="nav-link nav-bar-status" aria-current="" href="{% url 'all_merchandise' %}?category=cd">Anthology CD</a>
-                        </li>
-
-                    </ul>
                 </div>
-            </div>
         </nav>
         {% load account %}
 
@@ -210,32 +230,14 @@
     {% endblock %}
 
     {% block postloadjs %}
+    {{ block.super }}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
-   <script>
-    document.querySelectorAll('.nav-bar-status').forEach(link => {
-        console.log('Link Text:', link.innerText);
-        console.log('Link Href:', link.href);
-        console.log('Window Location:', window.location.href);
 
-        // Compare only the pathname part of the URL
-        if (link.pathname === window.location.pathname) {
-            console.log('Setting aria-current to page');
-            link.setAttribute('aria-current', 'page');
-        }
-    });
-</script>
-</script>
-    <!-- Message Timer -->
-    <!-- <script>
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 2500);
-    </script> -->
-    <!-- Include Summernote JS from CDN -->
+
+
+
 
     <script src="{% static 'styles/js/quantity_update.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
